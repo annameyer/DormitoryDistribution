@@ -65,7 +65,7 @@
       <DependentUpon>AuthorizationForm.cs</DependentUpon>
     </Compile>
     <Compile Include="DB\Authorization.cs" />
-    <Compile Include="DB\Model.cs" />
+    <Compile Include="DB\DormitoryDistributionContext.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="AuthorizationForm.resx">
