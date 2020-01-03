@@ -9,35 +9,35 @@ namespace DormitoryDistribution
     {
         public static DormitoryDistributionContext _context = new DormitoryDistributionContext();
 
-        public static void CreateUsers(Hostel hostel)
+        public static void CreateHostels(Hostel hostel)
         {
             _context.Hostels.Add(hostel);
             _context.SaveChanges();
         }
 
-        public static void UpdateUsers(Hostel hostel)
+        public static void UpdateHostels(Hostel hostel)
         {
             ContextDetached(hostel);
             _context.Entry(hostel).State = EntityState.Modified;
             _context.SaveChanges();
         }
 
-        public static void DeleteUsers(Hostel hostel)
+        public static void DeleteHostels(Hostel hostel)
         {
             ContextDetached(hostel);
             _context.Entry(hostel).State = EntityState.Deleted;
             _context.SaveChanges();
         }
 
-        public static List<Users> GetUsers()
+        public static List<Hostel> GetHostels()
         {
-             return _context.Users.ToList();
+             return _context.Hostels.ToList();
         }
 
-        public static Users FindUser(string login, string password)
-        {
-            return _context.Users.FirstOrDefault(x => x.Login == login && x.Password == password);
-        }
+        //public static Hostel FindHostel(string login, string password)
+        //{
+        //    return _context.Hostels.FirstOrDefault(x => x.Login == login && x.Password == password);
+        //}
 
         private static void ContextDetached(Hostel hostel)
         {
