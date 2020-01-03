@@ -22,7 +22,7 @@ namespace DormitoryDistribution
 
                 //if(!string.IsNullOrEmpty(login) && !string.IsNullOrEmpty(password))
                 //{
-                //    var user = _context.Authorizations.FirstOrDefault(x => x.Login == login && x.Password == password);
+                //    var user = _context.Users.FirstOrDefault(x => x.Login == login && x.Password == password);
                 //    if(user != null)
                 //    {
                 //        if (user.IsAdmin) {
@@ -40,7 +40,7 @@ namespace DormitoryDistribution
                 //}
                 //else
                 //{
-                //    if (_context.Authorizations.Count() == 0)
+                //    if (_context.Users.Count() == 0)
                 //    {
                 //        OpenForms.OpenCreateFirstAdminForm(this);
                 //    }

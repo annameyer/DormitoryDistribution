@@ -17,13 +17,13 @@ namespace DormitoryDistribution
             {
                 var login = LoginTextBox.Text.Trim();
                 var password = PasswordTextBox.Text.Trim();
-                var admin = new Authorization
+                var admin = new Users
                 {
                     Login = login,
                     Password = password,
                     IsAdmin = true
                 };
-                _context.Authorizations.Add(admin);
+                _context.Users.Add(admin);
                 _context.SaveChanges();
                 OpenForms.OpenAuthorizationForm(this);
             }

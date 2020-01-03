@@ -9,7 +9,7 @@ namespace DormitoryDistribution
 {
     public partial class ViewAlUsersForm : Form
     {
-        private List<Authorization> _users = new List<Authorization>();
+        private List<Users> _users = new List<Users>();
 
         public ViewAlUsersForm()
         {
@@ -30,8 +30,8 @@ namespace DormitoryDistribution
         {
             using (var _context = new DormitoryDistributionContext())
             {
-                List<Authorization> per = _context.Authorizations.ToList();
-                _users = _context.Authorizations.ToList();
+                List<Users> per = _context.Users.ToList();
+                _users = _context.Users.ToList();
             }
         }
 
@@ -39,7 +39,7 @@ namespace DormitoryDistribution
         {
             try
             {
-                Authorization currentUser = GetCurrentUser();
+                Users currentUser = GetCurrentUser();
                 HiddenIdTextBox.Text = currentUser.Id.ToString();
                 LoginTextBox.Text = currentUser.Login;
                 PasswordTextBox.Text = currentUser.Password;
@@ -81,7 +81,7 @@ namespace DormitoryDistribution
             {
                 try
                 {
-                    Authorization user = new Authorization
+                    Users user = new Users
                     {
                         Id = int.Parse(HiddenIdTextBox.Text),
                         Login = LoginTextBox.Text.Trim(),
@@ -108,14 +108,14 @@ namespace DormitoryDistribution
             {
                 try
                 {
-                    Authorization user = new Authorization
+                    Users user = new Users
                     {
                         Login = LoginTextBox.Text.Trim(),
                         Password = PasswordTextBox.Text.Trim(),
                         IsAdmin = IsAdminCheckBox.Checked
                     };
 
-                    _context.Authorizations.Add(user);
+                    _context.Users.Add(user);
                     _context.SaveChanges();
                     LoadGridData();
                     ClearData();
@@ -147,9 +147,9 @@ namespace DormitoryDistribution
             IsAdminCheckBox.Checked = false;
         }
 
-        private Authorization GetCurrentUser()
+        private Users GetCurrentUser()
         {
-            return new Authorization
+            return new Users
             {
                 Id = (int)UsersDataGridView.CurrentRow.Cells[0].Value,
                 Login = UsersDataGridView.CurrentRow.Cells[1].Value.ToString(),
@@ -164,7 +164,7 @@ namespace DormitoryDistribution
             {
                 try
                 {
-                    Authorization user = GetCurrentUser();
+                    Users user = GetCurrentUser();
                     _context.Entry(user).State = EntityState.Deleted;
                     _context.SaveChanges();
                     LoadGridData();

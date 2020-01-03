@@ -76,7 +76,7 @@
     <Compile Include="CreateFirstAdmin.Designer.cs">
       <DependentUpon>CreateFirstAdmin.cs</DependentUpon>
     </Compile>
-    <Compile Include="DB\Authorization.cs" />
+    <Compile Include="DB\Users.cs" />
     <Compile Include="DB\DormitoryDistributionContext.cs" />
     <Compile Include="HostelAllocationForm.cs">
       <SubType>Form</SubType>

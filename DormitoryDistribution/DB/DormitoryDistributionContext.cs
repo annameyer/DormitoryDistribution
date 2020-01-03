@@ -9,15 +9,15 @@ namespace DormitoryDistribution.DB
         {
         }
 
-        public virtual DbSet<Authorization> Authorizations { get; set; }
+        public virtual DbSet<Users> Users { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
-            modelBuilder.Entity<Authorization>()
+            modelBuilder.Entity<Users>()
                 .Property(e => e.Login)
                 .IsFixedLength();
 
-            modelBuilder.Entity<Authorization>()
+            modelBuilder.Entity<Users>()
                 .Property(e => e.Password)
                 .IsFixedLength();
         }

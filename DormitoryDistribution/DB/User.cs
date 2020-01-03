@@ -3,8 +3,8 @@ namespace DormitoryDistribution.DB
     using System.ComponentModel.DataAnnotations;
     using System.ComponentModel.DataAnnotations.Schema;
 
-    [Table("Authorization")]
-    public partial class Authorization
+    [Table("User")]
+    public partial class Users
     {
         public int Id { get; set; }
 

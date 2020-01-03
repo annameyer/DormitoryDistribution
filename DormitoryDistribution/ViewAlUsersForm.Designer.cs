@@ -32,6 +32,7 @@
             this.backToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.UsersDataGridView = new System.Windows.Forms.DataGridView();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.HiddenIdTextBox = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.IsAdminCheckBox = new System.Windows.Forms.CheckBox();
@@ -40,7 +41,6 @@
             this.CreateNewButton = new System.Windows.Forms.Button();
             this.SaveButton = new System.Windows.Forms.Button();
             this.DeleteButton = new System.Windows.Forms.Button();
-            this.HiddenIdTextBox = new System.Windows.Forms.TextBox();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.UsersDataGridView)).BeginInit();
             this.groupBox1.SuspendLayout();
@@ -68,6 +68,7 @@
             this.UsersDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.UsersDataGridView.Location = new System.Drawing.Point(12, 27);
             this.UsersDataGridView.Name = "UsersDataGridView";
+            this.UsersDataGridView.ReadOnly = true;
             this.UsersDataGridView.Size = new System.Drawing.Size(445, 411);
             this.UsersDataGridView.TabIndex = 1;
             this.UsersDataGridView.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.UsersDataGridView_CellClick);
@@ -87,6 +88,14 @@
             this.groupBox1.TabIndex = 7;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "User ";
+            // 
+            // HiddenIdTextBox
+            // 
+            this.HiddenIdTextBox.Location = new System.Drawing.Point(226, 27);
+            this.HiddenIdTextBox.Name = "HiddenIdTextBox";
+            this.HiddenIdTextBox.Size = new System.Drawing.Size(19, 22);
+            this.HiddenIdTextBox.TabIndex = 12;
+            this.HiddenIdTextBox.Visible = false;
             // 
             // label2
             // 
@@ -119,6 +128,7 @@
             // PasswordTextBox
             // 
             this.PasswordTextBox.Location = new System.Drawing.Point(120, 63);
+            this.PasswordTextBox.MaxLength = 10;
             this.PasswordTextBox.Name = "PasswordTextBox";
             this.PasswordTextBox.Size = new System.Drawing.Size(100, 22);
             this.PasswordTextBox.TabIndex = 8;
@@ -126,6 +136,7 @@
             // LoginTextBox
             // 
             this.LoginTextBox.Location = new System.Drawing.Point(120, 27);
+            this.LoginTextBox.MaxLength = 10;
             this.LoginTextBox.Name = "LoginTextBox";
             this.LoginTextBox.Size = new System.Drawing.Size(100, 22);
             this.LoginTextBox.TabIndex = 7;
@@ -159,14 +170,6 @@
             this.DeleteButton.Text = "Delete";
             this.DeleteButton.UseVisualStyleBackColor = true;
             this.DeleteButton.Click += new System.EventHandler(this.DeleteButton_Click);
-            // 
-            // HiddenIdTextBox
-            // 
-            this.HiddenIdTextBox.Location = new System.Drawing.Point(226, 27);
-            this.HiddenIdTextBox.Name = "HiddenIdTextBox";
-            this.HiddenIdTextBox.Size = new System.Drawing.Size(19, 22);
-            this.HiddenIdTextBox.TabIndex = 12;
-            this.HiddenIdTextBox.Visible = false;
             // 
             // ViewAlUsersForm
             // 
