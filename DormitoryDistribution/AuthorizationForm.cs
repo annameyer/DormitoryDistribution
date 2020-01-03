@@ -4,9 +4,9 @@ using System.Windows.Forms;
 
 namespace DormitoryDistribution
 {
-    public partial class Authorization : Form
+    public partial class AuthorizationForm : Form
     {
-        public Authorization()
+        public AuthorizationForm()
         {
             InitializeComponent();
         }
@@ -16,6 +16,7 @@ namespace DormitoryDistribution
             using (DormitoryDistributionContext _context = new DormitoryDistributionContext())
             {
                 var user = _context.Authorizations;
+                _context.SaveChanges();
                 var per = PasswordTextBox.Text;
                 var per2 = LoginTextBox;
             }
