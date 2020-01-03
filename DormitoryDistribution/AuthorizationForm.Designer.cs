@@ -28,25 +28,14 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.CheckBox ViewPasswordCheckBox;
             this.Login = new System.Windows.Forms.Button();
             this.LoginTextBox = new System.Windows.Forms.TextBox();
             this.PasswordTextBox = new System.Windows.Forms.TextBox();
             this.LoginLabel = new System.Windows.Forms.Label();
             this.PasswordLabel = new System.Windows.Forms.Label();
-            ViewPasswordCheckBox = new System.Windows.Forms.CheckBox();
+            this.ErrorLabel = new System.Windows.Forms.Label();
+            this.viewPasswordCheck = new System.Windows.Forms.CheckBox();
             this.SuspendLayout();
-            // 
-            // ViewPasswordCheckBox
-            // 
-            ViewPasswordCheckBox.AutoSize = true;
-            ViewPasswordCheckBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            ViewPasswordCheckBox.Location = new System.Drawing.Point(176, 120);
-            ViewPasswordCheckBox.Name = "ViewPasswordCheckBox";
-            ViewPasswordCheckBox.Size = new System.Drawing.Size(135, 24);
-            ViewPasswordCheckBox.TabIndex = 3;
-            ViewPasswordCheckBox.Text = "View Password";
-            ViewPasswordCheckBox.UseVisualStyleBackColor = true;
             // 
             // Login
             // 
@@ -62,6 +51,7 @@
             // LoginTextBox
             // 
             this.LoginTextBox.Location = new System.Drawing.Point(176, 58);
+            this.LoginTextBox.MaxLength = 10;
             this.LoginTextBox.Name = "LoginTextBox";
             this.LoginTextBox.Size = new System.Drawing.Size(170, 20);
             this.LoginTextBox.TabIndex = 1;
@@ -69,9 +59,11 @@
             // PasswordTextBox
             // 
             this.PasswordTextBox.Location = new System.Drawing.Point(176, 94);
+            this.PasswordTextBox.MaxLength = 10;
             this.PasswordTextBox.Name = "PasswordTextBox";
             this.PasswordTextBox.Size = new System.Drawing.Size(170, 20);
             this.PasswordTextBox.TabIndex = 2;
+            this.PasswordTextBox.UseSystemPasswordChar = true;
             // 
             // LoginLabel
             // 
@@ -93,18 +85,41 @@
             this.PasswordLabel.TabIndex = 5;
             this.PasswordLabel.Text = "Password";
             // 
-            // Authorization
+            // ErrorLabel
+            // 
+            this.ErrorLabel.AutoSize = true;
+            this.ErrorLabel.BackColor = System.Drawing.SystemColors.Control;
+            this.ErrorLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ErrorLabel.ForeColor = System.Drawing.Color.Red;
+            this.ErrorLabel.Location = new System.Drawing.Point(173, 29);
+            this.ErrorLabel.Name = "ErrorLabel";
+            this.ErrorLabel.Size = new System.Drawing.Size(0, 16);
+            this.ErrorLabel.TabIndex = 6;
+            // 
+            // viewPasswordCheck
+            // 
+            this.viewPasswordCheck.AutoSize = true;
+            this.viewPasswordCheck.Location = new System.Drawing.Point(176, 127);
+            this.viewPasswordCheck.Name = "viewPasswordCheck";
+            this.viewPasswordCheck.Size = new System.Drawing.Size(97, 17);
+            this.viewPasswordCheck.TabIndex = 8;
+            this.viewPasswordCheck.Text = "View password";
+            this.viewPasswordCheck.UseVisualStyleBackColor = true;
+            this.viewPasswordCheck.CheckedChanged += new System.EventHandler(this.viewPasswordCheck_CheckedChanged);
+            // 
+            // AuthorizationForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(482, 223);
+            this.Controls.Add(this.viewPasswordCheck);
+            this.Controls.Add(this.ErrorLabel);
             this.Controls.Add(this.PasswordLabel);
             this.Controls.Add(this.LoginLabel);
-            this.Controls.Add(ViewPasswordCheckBox);
             this.Controls.Add(this.PasswordTextBox);
             this.Controls.Add(this.LoginTextBox);
             this.Controls.Add(this.Login);
-            this.Name = "Authorization";
+            this.Name = "AuthorizationForm";
             this.Text = "Authorization";
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -118,6 +133,8 @@
         private System.Windows.Forms.TextBox PasswordTextBox;
         private System.Windows.Forms.Label LoginLabel;
         private System.Windows.Forms.Label PasswordLabel;
+        private System.Windows.Forms.Label ErrorLabel;
+        private System.Windows.Forms.CheckBox viewPasswordCheck;
     }
 }
 
