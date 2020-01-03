@@ -1,12 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
+﻿using System.Windows.Forms;
 
 namespace DormitoryDistribution
 {
@@ -15,6 +7,16 @@ namespace DormitoryDistribution
         public Admin()
         {
             InitializeComponent();
+        }
+
+        private void OpenViewAlUsersForm_Click(object sender, System.EventArgs e)
+        {
+            OpenForms.OpenViewAlUsersForm(this);
+        }
+
+        private void OpenHostelAllocationForm_Click(object sender, System.EventArgs e)
+        {
+            OpenForms.OpenHostelAllocationForm(this);
         }
     }
 }

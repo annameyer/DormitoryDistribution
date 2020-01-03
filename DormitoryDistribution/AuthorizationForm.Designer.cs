@@ -120,7 +120,7 @@
             this.Controls.Add(this.LoginTextBox);
             this.Controls.Add(this.Login);
             this.Name = "AuthorizationForm";
-            this.Text = "Authorization";
+            this.Text = "Hostel allocation";
             this.ResumeLayout(false);
             this.PerformLayout();
 

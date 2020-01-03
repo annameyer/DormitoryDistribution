@@ -28,12 +28,83 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
+            this.CreateAdminButton = new System.Windows.Forms.Button();
+            this.PasswordLabel = new System.Windows.Forms.Label();
+            this.LoginLabel = new System.Windows.Forms.Label();
+            this.PasswordTextBox = new System.Windows.Forms.TextBox();
+            this.LoginTextBox = new System.Windows.Forms.TextBox();
+            this.SuspendLayout();
+            // 
+            // CreateAdminButton
+            // 
+            this.CreateAdminButton.Location = new System.Drawing.Point(221, 124);
+            this.CreateAdminButton.Name = "CreateAdminButton";
+            this.CreateAdminButton.Size = new System.Drawing.Size(75, 23);
+            this.CreateAdminButton.TabIndex = 0;
+            this.CreateAdminButton.Text = "Create";
+            this.CreateAdminButton.UseVisualStyleBackColor = true;
+            this.CreateAdminButton.Click += new System.EventHandler(this.CreateAdminButton_Click);
+            // 
+            // PasswordLabel
+            // 
+            this.PasswordLabel.AutoSize = true;
+            this.PasswordLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.PasswordLabel.Location = new System.Drawing.Point(61, 76);
+            this.PasswordLabel.Name = "PasswordLabel";
+            this.PasswordLabel.Size = new System.Drawing.Size(92, 24);
+            this.PasswordLabel.TabIndex = 9;
+            this.PasswordLabel.Text = "Password";
+            // 
+            // LoginLabel
+            // 
+            this.LoginLabel.AutoSize = true;
+            this.LoginLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LoginLabel.Location = new System.Drawing.Point(96, 40);
+            this.LoginLabel.Name = "LoginLabel";
+            this.LoginLabel.Size = new System.Drawing.Size(57, 24);
+            this.LoginLabel.TabIndex = 8;
+            this.LoginLabel.Text = "Login";
+            // 
+            // PasswordTextBox
+            // 
+            this.PasswordTextBox.Location = new System.Drawing.Point(170, 81);
+            this.PasswordTextBox.MaxLength = 10;
+            this.PasswordTextBox.Name = "PasswordTextBox";
+            this.PasswordTextBox.Size = new System.Drawing.Size(170, 20);
+            this.PasswordTextBox.TabIndex = 7;
+            this.PasswordTextBox.UseSystemPasswordChar = true;
+            // 
+            // LoginTextBox
+            // 
+            this.LoginTextBox.Location = new System.Drawing.Point(170, 45);
+            this.LoginTextBox.MaxLength = 10;
+            this.LoginTextBox.Name = "LoginTextBox";
+            this.LoginTextBox.Size = new System.Drawing.Size(170, 20);
+            this.LoginTextBox.TabIndex = 6;
+            // 
+            // CreateFirstAdmin
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(473, 174);
+            this.Controls.Add(this.PasswordLabel);
+            this.Controls.Add(this.LoginLabel);
+            this.Controls.Add(this.PasswordTextBox);
+            this.Controls.Add(this.LoginTextBox);
+            this.Controls.Add(this.CreateAdminButton);
+            this.Name = "CreateFirstAdmin";
             this.Text = "CreateFirstAdmin";
+            this.ResumeLayout(false);
+            this.PerformLayout();
+
         }
 
         #endregion
+
+        private System.Windows.Forms.Button CreateAdminButton;
+        private System.Windows.Forms.Label PasswordLabel;
+        private System.Windows.Forms.Label LoginLabel;
+        private System.Windows.Forms.TextBox PasswordTextBox;
+        private System.Windows.Forms.TextBox LoginTextBox;
     }
 }
