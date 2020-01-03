@@ -87,9 +87,15 @@ namespace DormitoryDistribution
                 IsAdmin = IsAdminCheckBox.Checked
             };
 
-            UserRepository.CreateUsers(user);
-            MessageBox.Show("Data save successfule!");
-
+            if (UserRepository.FindUser(user.Login, user.Password) == null)
+            {
+                UserRepository.CreateUsers(user);
+                MessageBox.Show("Data save successfule!");
+            }
+            else
+            {
+                MessageBox.Show("User exist!");
+            }
         }
 
         private void LoadGridData()

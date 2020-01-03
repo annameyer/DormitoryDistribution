@@ -31,5 +31,10 @@ namespace DormitoryDistribution
         {
              return _context.Users.ToList();
         }
+
+        public static Users FindUser(string login, string password)
+        {
+            return _context.Users.FirstOrDefault(x => x.Login == login && x.Password == password);
+        }
     }
 }

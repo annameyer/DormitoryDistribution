@@ -14,19 +14,17 @@ namespace DormitoryDistribution
 
         private void Login_Click(object sender, EventArgs e)
         {
-            //using (DormitoryDistributionContext _context = new DormitoryDistributionContext())
-            //{
-                //ErrorLabel.Text = "";
-                //var login = LoginTextBox.Text.Trim();
-                //var password = PasswordTextBox.Text.Trim();
+            //ErrorLabel.Text = "";
+            //var login = LoginTextBox.Text.Trim();
+            //var password = PasswordTextBox.Text.Trim();
 
-                //if(!string.IsNullOrEmpty(login) && !string.IsNullOrEmpty(password))
-                //{
-                //    var user = _context.Users.FirstOrDefault(x => x.Login == login && x.Password == password);
-                //    if(user != null)
-                //    {
-                //        if (user.IsAdmin) {
-                            OpenForms.OpenAdminForm(this);
+            //if(!string.IsNullOrEmpty(login) && !string.IsNullOrEmpty(password))
+            //{
+            //    var user = UserRepository.FindUser(login, password);
+            //    if(user != null)
+            //    {
+            //        if (user.IsAdmin) {
+            OpenForms.OpenAdminForm(this);
                 //        }
                 //        else
                 //        {
@@ -49,7 +47,6 @@ namespace DormitoryDistribution
                 //        ErrorLabel.Text = "Enter login or password";
                 //    }
                 //}
-            //}
         }             
 
         private void viewPasswordCheck_CheckedChanged(object sender, EventArgs e)
