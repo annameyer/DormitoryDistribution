@@ -94,6 +94,7 @@
     <Compile Include="User.Designer.cs">
       <DependentUpon>User.cs</DependentUpon>
     </Compile>
+    <Compile Include="HostelRepository.cs" />
     <Compile Include="UserRepository.cs" />
     <Compile Include="ViewAlUsersForm.cs">
       <SubType>Form</SubType>
