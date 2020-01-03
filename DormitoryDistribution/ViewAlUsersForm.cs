@@ -23,16 +23,15 @@ namespace DormitoryDistribution
 
         private void ViewAlUsersForm_Load(object sender, EventArgs e)
         {
-            GetUsers();
             LoadGridData();
         }
 
         private void GetUsers()
         {
-            using (DormitoryDistributionContext _context = new DormitoryDistributionContext())
+            using (var _context = new DormitoryDistributionContext())
             {
-                var per = _context.Authorizations.ToList();
-                 _users = _context.Authorizations.ToList();
+                List<Authorization> per = _context.Authorizations.ToList();
+                _users = _context.Authorizations.ToList();
             }
         }
 
@@ -40,15 +39,15 @@ namespace DormitoryDistribution
         {
             try
             {
-                HiddenIdTextBox.Text = UsersDataGridView.CurrentRow.Cells[0].Value.ToString();
-                LoginTextBox.Text = UsersDataGridView.CurrentRow.Cells[1].Value.ToString();
-                PasswordTextBox.Text = UsersDataGridView.CurrentRow.Cells[2].Value.ToString();
-                IsAdminCheckBox.Checked = (bool)UsersDataGridView.CurrentRow.Cells[3].Value;
+                Authorization currentUser = GetCurrentUser();
+                HiddenIdTextBox.Text = currentUser.Id.ToString();
+                LoginTextBox.Text = currentUser.Login;
+                PasswordTextBox.Text = currentUser.Password;
+                IsAdminCheckBox.Checked = currentUser.IsAdmin;
             }
             catch
             {
-                LoginTextBox.Clear();
-                PasswordTextBox.Clear();
+                ClearData();
 
             }
         }
@@ -56,11 +55,88 @@ namespace DormitoryDistribution
         private void CreateNewButton_Click(object sender, EventArgs e)
         {
             ClearData();
-        }        
+        }
 
-        private void UpdateButton_Click(object sender, EventArgs e)
+        private void SaveButton_Click(object sender, EventArgs e)
         {
-            UpdateUsers();
+            bool modelIsValid = LoginTextBox.Text.Trim() != string.Empty && PasswordTextBox.Text.Trim() != string.Empty;
+            bool isOldUser = HiddenIdTextBox.Text.Trim() != string.Empty;
+            if (isOldUser)
+            {
+                UpdateUsers();
+            }
+            else if (modelIsValid)
+            {
+                CreateUsers();
+            }
+            else
+            {
+                MessageBox.Show("Please, enter all data in field");
+            }
+        }
+
+        private void UpdateUsers()
+        {
+            using (var _context = new DormitoryDistributionContext())
+            {
+                try
+                {
+                    Authorization user = new Authorization
+                    {
+                        Id = int.Parse(HiddenIdTextBox.Text),
+                        Login = LoginTextBox.Text.Trim(),
+                        Password = PasswordTextBox.Text.Trim(),
+                        IsAdmin = IsAdminCheckBox.Checked
+                    };
+
+                    _context.Entry(user).State = EntityState.Modified;
+                    _context.SaveChanges();
+                    LoadGridData();
+                    ClearData();
+                    MessageBox.Show("Data update successfule!");
+                }
+                catch
+                {
+
+                }
+            }
+        }
+
+        private void CreateUsers()
+        {
+            using (var _context = new DormitoryDistributionContext())
+            {
+                try
+                {
+                    Authorization user = new Authorization
+                    {
+                        Login = LoginTextBox.Text.Trim(),
+                        Password = PasswordTextBox.Text.Trim(),
+                        IsAdmin = IsAdminCheckBox.Checked
+                    };
+
+                    _context.Authorizations.Add(user);
+                    _context.SaveChanges();
+                    LoadGridData();
+                    ClearData();
+                    MessageBox.Show("Data save successfule!");
+                }
+                catch
+                {
+
+                }
+            }
+        }
+
+        private void LoadGridData()
+        {
+            GetUsers();
+            BindingSource binding = new BindingSource
+            {
+                DataSource = _users
+            };
+
+            UsersDataGridView.DataSource = binding;
         }
 
         private void ClearData()
@@ -71,29 +147,35 @@ namespace DormitoryDistribution
             IsAdminCheckBox.Checked = false;
         }
 
-        private void UpdateUsers()
+        private Authorization GetCurrentUser()
         {
-            using (DormitoryDistributionContext _context = new DormitoryDistributionContext())
+            return new Authorization
             {
-                var user = new Authorization
-                {
-                    Id = Int32.Parse(HiddenIdTextBox.Text),
-                    Login = LoginTextBox.Text.Trim(),
-                    Password = PasswordTextBox.Text.Trim(),
-                    IsAdmin = IsAdminCheckBox.Checked
-                };
-
-                _context.Entry(user).State = EntityState.Modified;
-                LoadGridData();
-                _context.SaveChanges();
-            }
+                Id = (int)UsersDataGridView.CurrentRow.Cells[0].Value,
+                Login = UsersDataGridView.CurrentRow.Cells[1].Value.ToString(),
+                Password = UsersDataGridView.CurrentRow.Cells[2].Value.ToString(),
+                IsAdmin = (bool)UsersDataGridView.CurrentRow.Cells[3].Value
+            };
         }
 
-        private void LoadGridData()
+        private void DeleteButton_Click(object sender, EventArgs e)
         {
-            BindingSource binding = new BindingSource();
-            binding.DataSource = _users;
-            UsersDataGridView.DataSource = binding;
+            using (var _context = new DormitoryDistributionContext())
+            {
+                try
+                {
+                    Authorization user = GetCurrentUser();
+                    _context.Entry(user).State = EntityState.Deleted;
+                    _context.SaveChanges();
+                    LoadGridData();
+                    MessageBox.Show("Data delete successfule!");
+                }
+                catch
+                {
+                    MessageBox.Show("Please, select cell for deleting");
+                }
+            }
+
         }
     }
 }

@@ -7,18 +7,15 @@ namespace DormitoryDistribution.DB
     public partial class Authorization
     {
         public int Id { get; set; }
-        [Key]
-        [Column(Order = 0)]
+
+        [Required]
         [StringLength(10)]
         public string Login { get; set; }
 
-        [Key]
-        [Column(Order = 1)]
+        [Required]
         [StringLength(10)]
         public string Password { get; set; }
 
-        [Key]
-        [Column(Order = 2)]
         public bool IsAdmin { get; set; }
     }
 }

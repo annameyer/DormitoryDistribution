@@ -38,7 +38,6 @@
             this.PasswordTextBox = new System.Windows.Forms.TextBox();
             this.LoginTextBox = new System.Windows.Forms.TextBox();
             this.CreateNewButton = new System.Windows.Forms.Button();
-            this.UpdateButton = new System.Windows.Forms.Button();
             this.SaveButton = new System.Windows.Forms.Button();
             this.DeleteButton = new System.Windows.Forms.Button();
             this.HiddenIdTextBox = new System.Windows.Forms.TextBox();
@@ -141,33 +140,25 @@
             this.CreateNewButton.UseVisualStyleBackColor = true;
             this.CreateNewButton.Click += new System.EventHandler(this.CreateNewButton_Click);
             // 
-            // UpdateButton
-            // 
-            this.UpdateButton.Location = new System.Drawing.Point(555, 244);
-            this.UpdateButton.Name = "UpdateButton";
-            this.UpdateButton.Size = new System.Drawing.Size(75, 23);
-            this.UpdateButton.TabIndex = 9;
-            this.UpdateButton.Text = "Update";
-            this.UpdateButton.UseVisualStyleBackColor = true;
-            this.UpdateButton.Click += new System.EventHandler(this.UpdateButton_Click);
-            // 
             // SaveButton
             // 
-            this.SaveButton.Location = new System.Drawing.Point(636, 244);
+            this.SaveButton.Location = new System.Drawing.Point(555, 244);
             this.SaveButton.Name = "SaveButton";
             this.SaveButton.Size = new System.Drawing.Size(75, 23);
             this.SaveButton.TabIndex = 10;
             this.SaveButton.Text = "Save";
             this.SaveButton.UseVisualStyleBackColor = true;
+            this.SaveButton.Click += new System.EventHandler(this.SaveButton_Click);
             // 
             // DeleteButton
             // 
-            this.DeleteButton.Location = new System.Drawing.Point(717, 244);
+            this.DeleteButton.Location = new System.Drawing.Point(644, 244);
             this.DeleteButton.Name = "DeleteButton";
             this.DeleteButton.Size = new System.Drawing.Size(75, 23);
             this.DeleteButton.TabIndex = 11;
             this.DeleteButton.Text = "Delete";
             this.DeleteButton.UseVisualStyleBackColor = true;
+            this.DeleteButton.Click += new System.EventHandler(this.DeleteButton_Click);
             // 
             // HiddenIdTextBox
             // 
@@ -184,7 +175,6 @@
             this.ClientSize = new System.Drawing.Size(809, 450);
             this.Controls.Add(this.DeleteButton);
             this.Controls.Add(this.SaveButton);
-            this.Controls.Add(this.UpdateButton);
             this.Controls.Add(this.CreateNewButton);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.UsersDataGridView);
@@ -215,7 +205,6 @@
         private System.Windows.Forms.TextBox PasswordTextBox;
         private System.Windows.Forms.TextBox LoginTextBox;
         private System.Windows.Forms.Button CreateNewButton;
-        private System.Windows.Forms.Button UpdateButton;
         private System.Windows.Forms.Button SaveButton;
         private System.Windows.Forms.Button DeleteButton;
         private System.Windows.Forms.TextBox HiddenIdTextBox;
