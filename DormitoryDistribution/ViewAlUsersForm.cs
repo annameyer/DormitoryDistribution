@@ -50,18 +50,17 @@ namespace DormitoryDistribution
             if (isOldUser)
             {
                 UpdateUsers();
+                LoadGridData();
+                ClearData();
             }
             else if (modelIsValid)
             {
-                CreateUsers();
+                CreateUsers();                             
             }
             else
             {
                 MessageBox.Show("Please, enter all data in field");
-            }
-
-            LoadGridData();
-            ClearData();
+            }            
         }
 
         private void UpdateUsers()
@@ -91,6 +90,8 @@ namespace DormitoryDistribution
             {
                 UserRepository.CreateUsers(user);
                 MessageBox.Show("Data save successfule!");
+                LoadGridData();
+                ClearData();
             }
             else
             {
@@ -133,6 +134,7 @@ namespace DormitoryDistribution
             {
                 UserRepository.DeleteUsers(GetSelectedUser());
                 LoadGridData();
+                ClearData();
                 MessageBox.Show("Data delete successfule!");
             }
             catch
