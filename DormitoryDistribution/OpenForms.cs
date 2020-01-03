@@ -43,5 +43,13 @@ namespace DormitoryDistribution
             hostelAllocationForm.ShowDialog();
             form.Close();
         }
+
+        public static void OpenAuthorizationForm(Form form)
+        {
+            var loginForm = new AuthorizationForm();
+            form.Hide();
+            loginForm.ShowDialog();
+            form.Close();
+        }
     }
 }

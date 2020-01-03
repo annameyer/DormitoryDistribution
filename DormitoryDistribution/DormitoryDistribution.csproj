@@ -108,6 +108,9 @@
     <EmbeddedResource Include="CreateFirstAdmin.resx">
       <DependentUpon>CreateFirstAdmin.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="HostelAllocationForm.resx">
+      <DependentUpon>HostelAllocationForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -117,6 +120,12 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="User.resx">
+      <DependentUpon>User.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ViewAlUsersForm.resx">
+      <DependentUpon>ViewAlUsersForm.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

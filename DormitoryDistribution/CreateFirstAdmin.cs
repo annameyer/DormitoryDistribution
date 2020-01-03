@@ -25,10 +25,7 @@ namespace DormitoryDistribution
                 };
                 _context.Authorizations.Add(admin);
                 _context.SaveChanges();
-                var loginForm = new AuthorizationForm();
-                this.Hide();
-                loginForm.ShowDialog();
-                this.Close();
+                OpenForms.OpenAuthorizationForm(this);
             }
         }
     }
