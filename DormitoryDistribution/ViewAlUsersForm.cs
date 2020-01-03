@@ -1,11 +1,16 @@
 ﻿using DormitoryDistribution.DB;
 using System;
+using System.Collections.Generic;
+using System.Data.Entity;
+using System.Linq;
 using System.Windows.Forms;
 
 namespace DormitoryDistribution
 {
     public partial class ViewAlUsersForm : Form
     {
+        private List<Users> _users = new List<Users>();
+
         public ViewAlUsersForm()
         {
             InitializeComponent();
@@ -21,11 +26,20 @@ namespace DormitoryDistribution
             LoadGridData();
         }
 
+        private void GetUsers()
+        {
+            using (var _context = new DormitoryDistributionContext())
+            {
+                List<Users> per = _context.Users.ToList();
+                _users = _context.Users.ToList();
+            }
+        }
+
         private void UsersDataGridView_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             try
             {
-                Users currentUser = GetSelectedUser();
+                Users currentUser = GetCurrentUser();
                 HiddenIdTextBox.Text = currentUser.Id.ToString();
                 LoginTextBox.Text = currentUser.Login;
                 PasswordTextBox.Text = currentUser.Password;
@@ -59,44 +73,67 @@ namespace DormitoryDistribution
             {
                 MessageBox.Show("Please, enter all data in field");
             }
-
-            LoadGridData();
-            ClearData();
         }
 
         private void UpdateUsers()
         {
-            Users user = new Users
+            using (var _context = new DormitoryDistributionContext())
             {
-                Id = int.Parse(HiddenIdTextBox.Text),
-                Login = LoginTextBox.Text.Trim(),
-                Password = PasswordTextBox.Text.Trim(),
-                IsAdmin = IsAdminCheckBox.Checked
-            };
+                try
+                {
+                    Users user = new Users
+                    {
+                        Id = int.Parse(HiddenIdTextBox.Text),
+                        Login = LoginTextBox.Text.Trim(),
+                        Password = PasswordTextBox.Text.Trim(),
+                        IsAdmin = IsAdminCheckBox.Checked
+                    };
 
-            UserRepository.UpdateUsers(user);
-            MessageBox.Show("Data update successfule!");
+                    _context.Entry(user).State = EntityState.Modified;
+                    _context.SaveChanges();
+                    LoadGridData();
+                    ClearData();
+                    MessageBox.Show("Data update successfule!");
+                }
+                catch
+                {
+
+                }
+            }
         }
 
         private void CreateUsers()
         {
-            Users user = new Users
+            using (var _context = new DormitoryDistributionContext())
             {
-                Login = LoginTextBox.Text.Trim(),
-                Password = PasswordTextBox.Text.Trim(),
-                IsAdmin = IsAdminCheckBox.Checked
-            };
+                try
+                {
+                    Users user = new Users
+                    {
+                        Login = LoginTextBox.Text.Trim(),
+                        Password = PasswordTextBox.Text.Trim(),
+                        IsAdmin = IsAdminCheckBox.Checked
+                    };
 
-            UserRepository.CreateUsers(user);
-            MessageBox.Show("Data save successfule!");
+                    _context.Users.Add(user);
+                    _context.SaveChanges();
+                    LoadGridData();
+                    ClearData();
+                    MessageBox.Show("Data save successfule!");
+                }
+                catch
+                {
 
+                }
+            }
         }
 
         private void LoadGridData()
         {
+            GetUsers();
             BindingSource binding = new BindingSource
             {
-                DataSource = UserRepository.GetUsers()
+                DataSource = _users
             };
 
             UsersDataGridView.DataSource = binding;
@@ -110,7 +147,7 @@ namespace DormitoryDistribution
             IsAdminCheckBox.Checked = false;
         }
 
-        private Users GetSelectedUser()
+        private Users GetCurrentUser()
         {
             return new Users
             {
@@ -123,15 +160,20 @@ namespace DormitoryDistribution
 
         private void DeleteButton_Click(object sender, EventArgs e)
         {
-            try
+            using (var _context = new DormitoryDistributionContext())
             {
-                UserRepository.DeleteUsers(GetSelectedUser());
-                LoadGridData();
-                MessageBox.Show("Data delete successfule!");
-            }
-            catch
-            {
-                MessageBox.Show("Please, select cell for deleting");
+                try
+                {
+                    Users user = GetCurrentUser();
+                    _context.Entry(user).State = EntityState.Deleted;
+                    _context.SaveChanges();
+                    LoadGridData();
+                    MessageBox.Show("Data delete successfule!");
+                }
+                catch
+                {
+                    MessageBox.Show("Please, select cell for deleting");
+                }
             }
 
         }
