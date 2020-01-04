@@ -132,10 +132,16 @@ namespace DormitoryDistribution
         {
             try
             {
-                UserRepository.DeleteUsers(GetSelectedUser());
-                LoadGridData();
-                ClearData();
-                MessageBox.Show("Data deleted successfully!");
+                var confirmResult = MessageBox.Show("Are you sure you want to delete this item ??",
+                                     "Confirm Delete!",
+                                     MessageBoxButtons.YesNo);
+                if (confirmResult == DialogResult.Yes)
+                {
+                    UserRepository.DeleteUsers(GetSelectedUser());
+                    LoadGridData();
+                    ClearData();
+                    MessageBox.Show("Data deleted successfully!");
+                }               
             }
             catch
             {

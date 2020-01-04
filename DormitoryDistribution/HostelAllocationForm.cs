@@ -108,10 +108,17 @@ namespace DormitoryDistribution
         {
             try
             {
-                HostelRepository.DeleteHostels(GetSelectedRecord());
-                LoadGridData();
-                ClearData();
-                MessageBox.Show("Data deleted successfully!");
+                var confirmResult = MessageBox.Show("Are you sure you want to delete this item ??",
+                                     "Confirm Delete!",
+                                     MessageBoxButtons.YesNo);
+                if (confirmResult == DialogResult.Yes)
+                {
+                    HostelRepository.DeleteHostels(GetSelectedRecord());
+                    LoadGridData();
+                    ClearData();
+                    MessageBox.Show("Data deleted successfully!");
+                }
+               
             }
             catch
             {
