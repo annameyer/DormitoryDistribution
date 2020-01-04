@@ -57,7 +57,7 @@
             this.HostelDataGridView.Location = new System.Drawing.Point(12, 27);
             this.HostelDataGridView.Name = "HostelDataGridView";
             this.HostelDataGridView.ReadOnly = true;
-            this.HostelDataGridView.Size = new System.Drawing.Size(844, 411);
+            this.HostelDataGridView.Size = new System.Drawing.Size(844, 550);
             this.HostelDataGridView.TabIndex = 13;
             // 
             // AccommodationAtTheHostel
