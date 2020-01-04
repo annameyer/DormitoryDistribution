@@ -65,7 +65,7 @@ namespace DormitoryDistribution
             };
 
             HostelRepository.UpdateHostels(hostel);
-            MessageBox.Show("Data update successfule!");
+            MessageBox.Show("Data updated successfully!");
         }
 
         private void CreateUsers()
@@ -84,13 +84,13 @@ namespace DormitoryDistribution
                 };
 
                 HostelRepository.CreateHostels(hostel);
-                MessageBox.Show("Data save successfule!");
+                MessageBox.Show("Data saved successfully!");
                 LoadGridData();
                 ClearData();
             }
             catch
             {
-                MessageBox.Show("Please, enter all data in field");
+                MessageBox.Show("Please, enter all field");
             }
         }
 
@@ -111,7 +111,7 @@ namespace DormitoryDistribution
                 HostelRepository.DeleteHostels(GetSelectedRecord());
                 LoadGridData();
                 ClearData();
-                MessageBox.Show("Data delete successfule!");
+                MessageBox.Show("Data deleted successfully!");
             }
             catch
             {
@@ -136,6 +136,8 @@ namespace DormitoryDistribution
 
         private void HostelAllocationForm_Load(object sender, EventArgs e)
         {
+            ClearControls();
+            ClearMinSum();
             LoadGridData();
         }
 
@@ -189,6 +191,11 @@ namespace DormitoryDistribution
         }
 
         private void ClearButton_Click(object sender, EventArgs e)
+        {
+            ClearControls();
+        }
+
+        public void ClearControls()
         {
             LastNameRadioButton.Checked = false;
             FirstNameRadioButton.Checked = false;
@@ -264,7 +271,7 @@ namespace DormitoryDistribution
 
             DataSet ds = GenerateExcel.GenerateExcelFile(HostelRepository.GetHostels());
             ExcelLibrary.DataSetHelper.CreateWorkbook(path, ds);
-            MessageBox.Show("File will be created");
+            MessageBox.Show("File created successfully");
         }
 
         private void minSalaryTextBox_TextChanged(object sender, EventArgs e)
@@ -282,7 +289,14 @@ namespace DormitoryDistribution
 
         private void ClearSalaryButton_Click(object sender, EventArgs e)
         {
+            ClearMinSum();
+        }
+
+        private void ClearMinSum()
+        {
+            HostelRepository.MinSalary = 0;
             minSalaryTextBox.Text = string.Empty;
+            LoadGridData();
         }
     }
 }

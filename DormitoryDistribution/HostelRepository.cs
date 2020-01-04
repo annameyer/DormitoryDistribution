@@ -123,7 +123,7 @@ namespace DormitoryDistribution
 
         public static List<Hostel> AccommodationAtTheHostel()
         {
-            return _context.Hostels.OrderByDescending(x => x.Income < (MinSalary * 2)).ThenBy(x => x.AverageMark).ThenByDescending(x => x.Activities).ToList();
+            return _context.Hostels.OrderByDescending(x => x.Income <= (MinSalary * 2)).ThenBy(x => x.AverageMark).ThenByDescending(x => x.Activities).ToList();
         }
     }
 }

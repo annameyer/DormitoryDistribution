@@ -217,7 +217,7 @@
             // PatronymicTextBox
             // 
             this.PatronymicTextBox.Location = new System.Drawing.Point(120, 83);
-            this.PatronymicTextBox.MaxLength = 10;
+            this.PatronymicTextBox.MaxLength = 20;
             this.PatronymicTextBox.Name = "PatronymicTextBox";
             this.PatronymicTextBox.Size = new System.Drawing.Size(197, 22);
             this.PatronymicTextBox.TabIndex = 13;
@@ -261,7 +261,7 @@
             // LastNameTextBox
             // 
             this.LastNameTextBox.Location = new System.Drawing.Point(120, 55);
-            this.LastNameTextBox.MaxLength = 10;
+            this.LastNameTextBox.MaxLength = 20;
             this.LastNameTextBox.Name = "LastNameTextBox";
             this.LastNameTextBox.Size = new System.Drawing.Size(197, 22);
             this.LastNameTextBox.TabIndex = 8;
@@ -269,7 +269,7 @@
             // FirstNameTextBox
             // 
             this.FirstNameTextBox.Location = new System.Drawing.Point(120, 27);
-            this.FirstNameTextBox.MaxLength = 10;
+            this.FirstNameTextBox.MaxLength = 20;
             this.FirstNameTextBox.Name = "FirstNameTextBox";
             this.FirstNameTextBox.Size = new System.Drawing.Size(197, 22);
             this.FirstNameTextBox.TabIndex = 7;
@@ -446,7 +446,8 @@
             this.Controls.Add(this.AccommodationAtTheHostel);
             this.MainMenuStrip = this.AccommodationAtTheHostel;
             this.Name = "HostelAllocationForm";
-            this.Text = "HostelAllocationForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Accommodation at the hostel";
             this.Load += new System.EventHandler(this.HostelAllocationForm_Load);
             this.AccommodationAtTheHostel.ResumeLayout(false);
             this.AccommodationAtTheHostel.PerformLayout();

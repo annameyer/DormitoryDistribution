@@ -120,7 +120,8 @@
             this.Controls.Add(this.LoginTextBox);
             this.Controls.Add(this.Login);
             this.Name = "AuthorizationForm";
-            this.Text = "Hostel allocation";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Accommodation at the hostel";
             this.ResumeLayout(false);
             this.PerformLayout();
 

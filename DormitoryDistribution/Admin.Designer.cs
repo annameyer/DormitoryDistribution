@@ -30,10 +30,10 @@
         {
             this.OpenViewAlUsersForm = new System.Windows.Forms.Button();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
-            this.OpenHostelAllocationForm = new System.Windows.Forms.Button();
-            this.label1 = new System.Windows.Forms.Label();
             this.backToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.OpenHostelAllocationForm = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -58,6 +58,20 @@
             this.menuStrip1.TabIndex = 1;
             this.menuStrip1.Text = "menuStrip1";
             // 
+            // backToolStripMenuItem
+            // 
+            this.backToolStripMenuItem.Name = "backToolStripMenuItem";
+            this.backToolStripMenuItem.Size = new System.Drawing.Size(44, 20);
+            this.backToolStripMenuItem.Text = "Back";
+            this.backToolStripMenuItem.Click += new System.EventHandler(this.backToolStripMenuItem_Click);
+            // 
+            // helpToolStripMenuItem
+            // 
+            this.helpToolStripMenuItem.Name = "helpToolStripMenuItem";
+            this.helpToolStripMenuItem.Size = new System.Drawing.Size(44, 20);
+            this.helpToolStripMenuItem.Text = "Help";
+            this.helpToolStripMenuItem.Click += new System.EventHandler(this.helpToolStripMenuItem_Click_1);
+            // 
             // OpenHostelAllocationForm
             // 
             this.OpenHostelAllocationForm.Location = new System.Drawing.Point(169, 99);
@@ -71,24 +85,11 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(33, 51);
+            this.label1.Location = new System.Drawing.Point(12, 51);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(73, 13);
+            this.label1.Size = new System.Drawing.Size(154, 39);
             this.label1.TabIndex = 3;
-            this.label1.Text = "Welcome ......";
-            // 
-            // backToolStripMenuItem
-            // 
-            this.backToolStripMenuItem.Name = "backToolStripMenuItem";
-            this.backToolStripMenuItem.Size = new System.Drawing.Size(44, 20);
-            this.backToolStripMenuItem.Text = "Back";
-            this.backToolStripMenuItem.Click += new System.EventHandler(this.backToolStripMenuItem_Click);
-            // 
-            // helpToolStripMenuItem
-            // 
-            this.helpToolStripMenuItem.Name = "helpToolStripMenuItem";
-            this.helpToolStripMenuItem.Size = new System.Drawing.Size(44, 20);
-            this.helpToolStripMenuItem.Text = "Help";
+            this.label1.Text = "             Welcome \r\n        in the programm \r\n\"Accommodation at the hostel\"";
             // 
             // Admin
             // 
@@ -100,7 +101,8 @@
             this.Controls.Add(this.OpenViewAlUsersForm);
             this.Controls.Add(this.menuStrip1);
             this.Name = "Admin";
-            this.Text = "Admin";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Accommodation at the hostel";
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);

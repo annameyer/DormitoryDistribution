@@ -93,7 +93,8 @@
             this.Controls.Add(this.LoginTextBox);
             this.Controls.Add(this.CreateAdminButton);
             this.Name = "CreateFirstAdmin";
-            this.Text = "CreateFirstAdmin";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Create first administrator";
             this.ResumeLayout(false);
             this.PerformLayout();
 

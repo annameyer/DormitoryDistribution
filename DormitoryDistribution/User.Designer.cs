@@ -32,6 +32,7 @@
             this.AccommodationAtTheHostel = new System.Windows.Forms.MenuStrip();
             this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.saveToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ClearSalaryButton = new System.Windows.Forms.Button();
             this.minSalaryTextBox = new System.Windows.Forms.TextBox();
             this.accommodationAtTheHostelToolStripMenuItemButton = new System.Windows.Forms.Button();
@@ -63,7 +64,8 @@
             // 
             this.AccommodationAtTheHostel.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.toolStripMenuItem1,
-            this.saveToolStripMenuItem});
+            this.saveToolStripMenuItem,
+            this.helpToolStripMenuItem});
             this.AccommodationAtTheHostel.Location = new System.Drawing.Point(0, 0);
             this.AccommodationAtTheHostel.Name = "AccommodationAtTheHostel";
             this.AccommodationAtTheHostel.Size = new System.Drawing.Size(1228, 24);
@@ -81,6 +83,14 @@
             this.saveToolStripMenuItem.Name = "saveToolStripMenuItem";
             this.saveToolStripMenuItem.Size = new System.Drawing.Size(98, 20);
             this.saveToolStripMenuItem.Text = "Import to excel";
+            this.saveToolStripMenuItem.Click += new System.EventHandler(this.saveToolStripMenuItem_Click);
+            // 
+            // helpToolStripMenuItem
+            // 
+            this.helpToolStripMenuItem.Name = "helpToolStripMenuItem";
+            this.helpToolStripMenuItem.Size = new System.Drawing.Size(44, 20);
+            this.helpToolStripMenuItem.Text = "Help";
+            this.helpToolStripMenuItem.Click += new System.EventHandler(this.helpToolStripMenuItem_Click);
             // 
             // ClearSalaryButton
             // 
@@ -90,6 +100,7 @@
             this.ClearSalaryButton.TabIndex = 33;
             this.ClearSalaryButton.Text = "Clear";
             this.ClearSalaryButton.UseVisualStyleBackColor = true;
+            this.ClearSalaryButton.Click += new System.EventHandler(this.ClearSalaryButton_Click);
             // 
             // minSalaryTextBox
             // 
@@ -98,7 +109,7 @@
             this.minSalaryTextBox.Size = new System.Drawing.Size(307, 20);
             this.minSalaryTextBox.TabIndex = 32;
             this.minSalaryTextBox.TextChanged += new System.EventHandler(this.minSalaryTextBox_TextChanged);
-            this.minSalaryTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.minSalaryTextBox_KeyPress_1);
+            this.minSalaryTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.minSalaryTextBox_KeyPress);
             // 
             // accommodationAtTheHostelToolStripMenuItemButton
             // 
@@ -109,6 +120,7 @@
             this.accommodationAtTheHostelToolStripMenuItemButton.TabIndex = 31;
             this.accommodationAtTheHostelToolStripMenuItemButton.Text = "Accommodation at the hostel";
             this.accommodationAtTheHostelToolStripMenuItemButton.UseVisualStyleBackColor = true;
+            this.accommodationAtTheHostelToolStripMenuItemButton.Click += new System.EventHandler(this.accommodationAtTheHostelToolStripMenuItemButton_Click);
             // 
             // groupBox2
             // 
@@ -137,6 +149,7 @@
             this.SearchButton.TabIndex = 26;
             this.SearchButton.Text = "Search";
             this.SearchButton.UseVisualStyleBackColor = true;
+            this.SearchButton.Click += new System.EventHandler(this.SearchButton_Click);
             // 
             // ClearButton
             // 
@@ -146,6 +159,7 @@
             this.ClearButton.TabIndex = 25;
             this.ClearButton.Text = "Clear";
             this.ClearButton.UseVisualStyleBackColor = true;
+            this.ClearButton.Click += new System.EventHandler(this.ClearButton_Click);
             // 
             // SortButton
             // 
@@ -155,6 +169,7 @@
             this.SortButton.TabIndex = 24;
             this.SortButton.Text = "Sort";
             this.SortButton.UseVisualStyleBackColor = true;
+            this.SortButton.Click += new System.EventHandler(this.SortButton_Click);
             // 
             // IncomeRadioButton
             // 
@@ -166,6 +181,7 @@
             this.IncomeRadioButton.TabStop = true;
             this.IncomeRadioButton.Text = "Income";
             this.IncomeRadioButton.UseVisualStyleBackColor = true;
+            this.IncomeRadioButton.CheckedChanged += new System.EventHandler(this.IncomeRadioButton_CheckedChanged);
             // 
             // AverageMarkRadioButton
             // 
@@ -177,6 +193,7 @@
             this.AverageMarkRadioButton.TabStop = true;
             this.AverageMarkRadioButton.Text = "Average mark";
             this.AverageMarkRadioButton.UseVisualStyleBackColor = true;
+            this.AverageMarkRadioButton.CheckedChanged += new System.EventHandler(this.AverageMarkRadioButton_CheckedChanged);
             // 
             // GroupRadioButton
             // 
@@ -188,6 +205,7 @@
             this.GroupRadioButton.TabStop = true;
             this.GroupRadioButton.Text = "Group";
             this.GroupRadioButton.UseVisualStyleBackColor = true;
+            this.GroupRadioButton.CheckedChanged += new System.EventHandler(this.GroupRadioButton_CheckedChanged);
             // 
             // LastNameRadioButton
             // 
@@ -199,6 +217,7 @@
             this.LastNameRadioButton.TabStop = true;
             this.LastNameRadioButton.Text = "Last Name ";
             this.LastNameRadioButton.UseVisualStyleBackColor = true;
+            this.LastNameRadioButton.CheckedChanged += new System.EventHandler(this.LastNameRadioButton_CheckedChanged);
             // 
             // FirstNameRadioButton
             // 
@@ -210,6 +229,7 @@
             this.FirstNameRadioButton.TabStop = true;
             this.FirstNameRadioButton.Text = "First Name";
             this.FirstNameRadioButton.UseVisualStyleBackColor = true;
+            this.FirstNameRadioButton.CheckedChanged += new System.EventHandler(this.FirstNameRadioButton_CheckedChanged);
             // 
             // SearchTextBox
             // 
@@ -218,6 +238,7 @@
             this.SearchTextBox.Name = "SearchTextBox";
             this.SearchTextBox.Size = new System.Drawing.Size(227, 22);
             this.SearchTextBox.TabIndex = 17;
+            this.SearchTextBox.TextChanged += new System.EventHandler(this.SearchTextBox_TextChanged);
             // 
             // User
             // 
@@ -231,7 +252,8 @@
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.HostelDataGridView);
             this.Name = "User";
-            this.Text = "User";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Accommodation at the hostel";
             this.Load += new System.EventHandler(this.User_Load);
             ((System.ComponentModel.ISupportInitialize)(this.HostelDataGridView)).EndInit();
             this.AccommodationAtTheHostel.ResumeLayout(false);
@@ -261,5 +283,6 @@
         private System.Windows.Forms.RadioButton LastNameRadioButton;
         private System.Windows.Forms.RadioButton FirstNameRadioButton;
         private System.Windows.Forms.TextBox SearchTextBox;
+        private System.Windows.Forms.ToolStripMenuItem helpToolStripMenuItem;
     }
 }

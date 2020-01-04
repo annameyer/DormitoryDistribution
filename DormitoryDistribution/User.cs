@@ -19,6 +19,8 @@ namespace DormitoryDistribution
 
         private void User_Load(object sender, EventArgs e)
         {
+            ClearControls();
+            ClearMinSum();
             LoadGridData();
         }
 
@@ -45,21 +47,19 @@ namespace DormitoryDistribution
             }
         }
 
+        private void SearchTextBox_TextChanged(object sender, EventArgs e)
+        {
+            HostelRepository.Search = SearchTextBox.Text.Trim();
+        }
+
+        private void SearchButton_Click(object sender, EventArgs e)
+        {
+            LoadGridData();
+        }
+
         private void FirstNameRadioButton_CheckedChanged(object sender, EventArgs e)
         {
             HostelRepository.FirstNameChecked = FirstNameRadioButton.Checked;
-        }
-
-        private void ClearButton_Click(object sender, EventArgs e)
-        {
-            LastNameRadioButton.Checked = false;
-            FirstNameRadioButton.Checked = false;
-            GroupRadioButton.Checked = false;
-            AverageMarkRadioButton.Checked = false;
-            IncomeRadioButton.Checked = false;
-            SearchTextBox.Text = string.Empty;
-            HostelRepository.Sort = true;
-            LoadGridData();
         }
 
         private void GroupRadioButton_CheckedChanged(object sender, EventArgs e)
@@ -82,24 +82,56 @@ namespace DormitoryDistribution
             HostelRepository.AverageMarkChecked = AverageMarkRadioButton.Checked;
         }
 
-        private void SearchTextBox_TextChanged(object sender, EventArgs e)
-        {
-            HostelRepository.Search = SearchTextBox.Text.Trim();
-        }
-
         private void SortButton_Click(object sender, EventArgs e)
         {
             HostelRepository.Sort = true;
             LoadGridData();
         }
 
-        private void SearchButton_Click(object sender, EventArgs e)
+        private void ClearButton_Click(object sender, EventArgs e)
         {
+            ClearControls();
+        }
+
+        public void ClearControls()
+        {
+            LastNameRadioButton.Checked = false;
+            FirstNameRadioButton.Checked = false;
+            GroupRadioButton.Checked = false;
+            AverageMarkRadioButton.Checked = false;
+            IncomeRadioButton.Checked = false;
+            SearchTextBox.Text = string.Empty;
+            HostelRepository.Sort = true;
             LoadGridData();
+        }
+
+        private void minSalaryTextBox_TextChanged(object sender, EventArgs e)
+        {
+            if (minSalaryTextBox.Text != string.Empty)
+            {
+                HostelRepository.MinSalary = decimal.Parse(minSalaryTextBox.Text.Trim());
+            }
+        }
+
+        private void minSalaryTextBox_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            IsNumber(sender, e);
         }
 
         private void accommodationAtTheHostelToolStripMenuItemButton_Click(object sender, EventArgs e)
         {
+            LoadGridData();
+        }
+
+        private void ClearSalaryButton_Click(object sender, EventArgs e)
+        {
+            ClearMinSum();
+        }
+
+        private void ClearMinSum()
+        {
+            HostelRepository.MinSalary = 0;
+            minSalaryTextBox.Text = string.Empty;
             LoadGridData();
         }
 
@@ -126,30 +158,12 @@ namespace DormitoryDistribution
 
             DataSet ds = GenerateExcel.GenerateExcelFile(HostelRepository.GetHostels());
             ExcelLibrary.DataSetHelper.CreateWorkbook(path, ds);
-            MessageBox.Show("File will be created");
+            MessageBox.Show("File created successfully");
         }
 
-        private void minSalaryTextBox_TextChanged(object sender, EventArgs e)
+        private void helpToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            if (minSalaryTextBox.Text != string.Empty)
-            {
-                HostelRepository.MinSalary = decimal.Parse(minSalaryTextBox.Text.Trim());
-            }
-        }
-
-        private void minSalaryTextBox_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            IsNumber(sender, e);
-        }
-
-        private void ClearSalaryButton_Click(object sender, EventArgs e)
-        {
-            minSalaryTextBox.Text = string.Empty;
-        }
-
-        private void minSalaryTextBox_KeyPress_1(object sender, KeyPressEventArgs e)
-        {
-            IsNumber(sender, e);
+            System.Diagnostics.Process.Start("Help.docx");
         }
     }
 }

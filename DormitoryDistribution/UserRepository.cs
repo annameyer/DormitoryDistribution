@@ -39,6 +39,16 @@ namespace DormitoryDistribution
             return _context.Users.FirstOrDefault(x => x.Login == login && x.Password == password);
         }
 
+        public static bool IsFirstUser()
+        {
+            if (_context.Users.Count() == 0)
+            {
+                return true;
+            }
+
+            return false;
+        }
+
         private static void ContextDetached(Users user)
         {
             var local = _context.Set<Users>().Local.FirstOrDefault(c => c.Id == user.Id);

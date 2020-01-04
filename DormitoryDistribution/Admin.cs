@@ -28,5 +28,10 @@ namespace DormitoryDistribution
         {
             OpenForms.OpenAuthorizationForm(this);
         }
+
+        private void helpToolStripMenuItem_Click_1(object sender, System.EventArgs e)
+        {
+            System.Diagnostics.Process.Start("HelpAdmin.docx");
+        }
     }
 }

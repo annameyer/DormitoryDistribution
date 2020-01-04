@@ -59,7 +59,7 @@ namespace DormitoryDistribution
             }
             else
             {
-                MessageBox.Show("Please, enter all data in field");
+                MessageBox.Show("Please, enter all field");
             }            
         }
 
@@ -74,7 +74,7 @@ namespace DormitoryDistribution
             };
 
             UserRepository.UpdateUsers(user);
-            MessageBox.Show("Data update successfule!");
+            MessageBox.Show("Data updated successfully!");
         }
 
         private void CreateUsers()
@@ -89,7 +89,7 @@ namespace DormitoryDistribution
             if (UserRepository.FindUser(user.Login, user.Password) == null)
             {
                 UserRepository.CreateUsers(user);
-                MessageBox.Show("Data save successfule!");
+                MessageBox.Show("Data saved successfully!");
                 LoadGridData();
                 ClearData();
             }
@@ -135,7 +135,7 @@ namespace DormitoryDistribution
                 UserRepository.DeleteUsers(GetSelectedUser());
                 LoadGridData();
                 ClearData();
-                MessageBox.Show("Data delete successfule!");
+                MessageBox.Show("Data deleted successfully!");
             }
             catch
             {
