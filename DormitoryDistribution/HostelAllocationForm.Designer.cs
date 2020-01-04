@@ -305,7 +305,7 @@
             this.groupBox2.Controls.Add(this.FirstNameRadioButton);
             this.groupBox2.Controls.Add(this.SearchTextBox);
             this.groupBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox2.Location = new System.Drawing.Point(880, 42);
+            this.groupBox2.Location = new System.Drawing.Point(880, 45);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(336, 180);
             this.groupBox2.TabIndex = 19;
