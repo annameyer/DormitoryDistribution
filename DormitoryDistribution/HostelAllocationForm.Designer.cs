@@ -91,8 +91,8 @@
             // saveToolStripMenuItem
             // 
             this.saveToolStripMenuItem.Name = "saveToolStripMenuItem";
-            this.saveToolStripMenuItem.Size = new System.Drawing.Size(98, 20);
-            this.saveToolStripMenuItem.Text = "Import to excel";
+            this.saveToolStripMenuItem.Size = new System.Drawing.Size(95, 20);
+            this.saveToolStripMenuItem.Text = "Export to excel";
             this.saveToolStripMenuItem.Click += new System.EventHandler(this.saveToolStripMenuItem_Click);
             // 
             // DeleteButton
