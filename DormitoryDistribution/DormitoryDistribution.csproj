@@ -42,8 +42,13 @@
     <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <HintPath>..\packages\EntityFramework.6.4.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
     </Reference>
+    <Reference Include="ExcelLibrary, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\ExcelLibrary.1.2011.7.31\lib\ExcelLibrary.dll</HintPath>
+    </Reference>
+    <Reference Include="PresentationCore" />
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.configuration" />
     <Reference Include="System.Core" />
     <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.Security" />
@@ -79,6 +84,7 @@
     <Compile Include="DB\DormitoryDistributionContext.cs" />
     <Compile Include="DB\Hostel.cs" />
     <Compile Include="DB\Users.cs" />
+    <Compile Include="GenerateExcel.cs" />
     <Compile Include="HostelAllocationForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -138,7 +144,9 @@
     <EmbeddedResource Include="ViewAlUsersForm.resx">
       <DependentUpon>ViewAlUsersForm.cs</DependentUpon>
     </EmbeddedResource>
-    <None Include="packages.config" />
+    <None Include="packages.config">
+      <SubType>Designer</SubType>
+    </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

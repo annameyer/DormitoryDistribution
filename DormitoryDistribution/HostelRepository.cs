@@ -15,6 +15,7 @@ namespace DormitoryDistribution
         public static bool IncomeChecked { get; set; }
         public static string Search { get; set; }
         public static bool Sort { get; set; }
+        public static decimal MinSalary { get; set; }
 
         public static void CreateHostels(Hostel hostel)
         {
@@ -39,6 +40,10 @@ namespace DormitoryDistribution
         public static List<Hostel> GetHostels()
         {
             var hostel = _context.Hostels.ToList();
+            if (MinSalary != 0)
+            {
+                return AccommodationAtTheHostel();
+            }
             if (Sort)
             {
                 hostel = SortHostel(hostel);
@@ -116,14 +121,9 @@ namespace DormitoryDistribution
             }
         }
 
-        public static List<Hostel> AccommodationAtTheHostel(decimal minSalary)
+        public static List<Hostel> AccommodationAtTheHostel()
         {
-            if (minSalary > 0)
-            {
-                return _context.Hostels.OrderByDescending(x => x.Income < (minSalary * 2)).ThenBy(x => x.AverageMark).ThenByDescending(x => x.Activities).ToList();
-            }
-
-            return GetHostels();
+            return _context.Hostels.OrderByDescending(x => x.Income < (MinSalary * 2)).ThenBy(x => x.AverageMark).ThenByDescending(x => x.Activities).ToList();
         }
     }
 }
