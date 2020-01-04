@@ -8,6 +8,13 @@ namespace DormitoryDistribution
     public static class HostelRepository
     {
         public static DormitoryDistributionContext _context = new DormitoryDistributionContext();
+        public static bool LastNameChecked { get; set; }
+        public static bool FirstNameChecked { get; set; }
+        public static bool GroupNameChecked { get; set; }
+        public static bool AverageMarkChecked { get; set; }
+        public static bool IncomeChecked { get; set; }
+        public static string Search { get; set; }
+        public static bool Sort { get; set; }
 
         public static void CreateHostels(Hostel hostel)
         {
@@ -31,21 +38,92 @@ namespace DormitoryDistribution
 
         public static List<Hostel> GetHostels()
         {
-             return _context.Hostels.ToList();
+            var hostel = _context.Hostels.ToList();
+            if (Sort)
+            {
+                hostel = SortHostel(hostel);
+            }
+            if (!string.IsNullOrEmpty(Search))
+            {
+                hostel = SearchHostel(hostel);
+            }
+
+            return hostel;
         }
 
-        //public static Hostel FindHostel(string login, string password)
-        //{
-        //    return _context.Hostels.FirstOrDefault(x => x.Login == login && x.Password == password);
-        //}
+        public static List<Hostel> SearchHostel(List<Hostel> hostels)
+        {
+            if (LastNameChecked)
+            {
+                return hostels.Where(x => x.LastName.Contains(Search)).ToList();
+            }
+            else if (FirstNameChecked)
+            {
+                return hostels.Where(x => x.FirstName.Contains(Search)).ToList();
+            }
+            else
+            if (GroupNameChecked)
+            {
+                return hostels.Where(x => x.Group.Contains(Search)).ToList();
+            }
+            else
+            if (AverageMarkChecked)
+            {
+                return hostels.Where(x => x.AverageMark == double.Parse(Search)).ToList();
+            }
+            else if (IncomeChecked)
+            {
+                return hostels.Where(x => x.Income == decimal.Parse(Search)).ToList();
+            }
+
+            return hostels;
+        }
+
+        public static List<Hostel> SortHostel(List<Hostel> hostels)
+        {
+            if (LastNameChecked)
+            {
+                return hostels.OrderBy(x => x.LastName).ToList();
+            }
+            else if (FirstNameChecked)
+            {
+                return hostels.OrderBy(x => x.FirstName).ToList();
+            }
+            else
+            if (GroupNameChecked)
+            {
+                return hostels.OrderBy(x => x.Group).ToList();
+            }
+            else
+            if (AverageMarkChecked)
+            {
+                return hostels.OrderBy(x => x.AverageMark).ToList();
+            }
+            else if (IncomeChecked)
+            {
+                return hostels.OrderBy(x => x.Income).ToList();
+            }
+
+            return hostels;
+        }
 
         private static void ContextDetached(Hostel hostel)
         {
-            var local = _context.Set<Hostel>().Local.FirstOrDefault(c => c.Id == hostel.Id);
+            Hostel local = _context.Set<Hostel>().Local.FirstOrDefault(c => c.Id == hostel.Id);
             if (local != null)
             {
                 _context.Entry(local).State = EntityState.Detached;
             }
+        }
+
+        public static List<Hostel> AccommodationAtTheHostel(decimal minSalary)
+        {
+            if (minSalary > 0)
+            {
+                return _context.Hostels.OrderByDescending(x => x.Income < (minSalary * 2)).ThenBy(x => x.AverageMark).ThenByDescending(x => x.Activities).ToList();
+            }
+
+            return GetHostels();
         }
     }
 }
