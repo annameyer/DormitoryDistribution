@@ -51,10 +51,5 @@ namespace DormitoryDistribution
             loginForm.ShowDialog();
             form.Close();
         }
-
-        public static MinSalaryPopUp OpenMinSalaryPopUp(Form form)
-        {
-            return new MinSalaryPopUp();
-        }
     }
 }
