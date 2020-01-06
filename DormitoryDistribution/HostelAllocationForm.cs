@@ -8,14 +8,27 @@ namespace DormitoryDistribution
 {
     public partial class HostelAllocationForm : Form
     {
-        public HostelAllocationForm()
+        private bool IsAdmin;
+        public HostelAllocationForm(bool isAdmin)
         {
+            IsAdmin = isAdmin;
             InitializeComponent();
+            if (!isAdmin)
+            {
+                groupBox1.Visible = false;
+            }
         }
 
         private void backToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            OpenForms.OpenAdminForm(this);
+            if (IsAdmin)
+            {
+                OpenForms.OpenAdminForm(this, IsAdmin);
+            }
+            else
+            {
+                OpenForms.OpenAuthorizationForm(this);
+            }
         }
 
         private void CreateNewButton_Click(object sender, EventArgs e)

@@ -25,11 +25,11 @@ namespace DormitoryDistribution
                 {
                     if (user.IsAdmin)
                     {
-                        OpenForms.OpenAdminForm(this);
+                        OpenForms.OpenAdminForm(this, user.IsAdmin);
                     }
                     else
                     {
-                        OpenForms.OpenUserForm(this);
+                        OpenForms.OpenHostelAllocationForm(this, user.IsAdmin);
                     }
                 }
                 else

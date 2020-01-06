@@ -13,7 +13,7 @@ namespace DormitoryDistribution
 
         private void backToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            OpenForms.OpenAdminForm(this);
+            OpenForms.OpenAdminForm(this, true);
         }
 
         private void ViewAlUsersForm_Load(object sender, EventArgs e)

@@ -4,8 +4,10 @@ namespace DormitoryDistribution
 {
     public partial class Admin : Form
     {
-        public Admin()
+        private bool IsAdmin;
+        public Admin(bool isAdmin)
         {
+            IsAdmin = isAdmin;
             InitializeComponent();
         }
 
@@ -16,7 +18,7 @@ namespace DormitoryDistribution
 
         private void OpenHostelAllocationForm_Click(object sender, System.EventArgs e)
         {
-            OpenForms.OpenHostelAllocationForm(this);
+            OpenForms.OpenHostelAllocationForm(this, IsAdmin);
         }
 
         private void helpToolStripMenuItem_Click(object sender, System.EventArgs e)

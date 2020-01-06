@@ -12,14 +12,6 @@ namespace DormitoryDistribution
             form.Close();
         }
 
-        public static void OpenUserForm(Form form)
-        {
-            var user = new User();
-            form.Hide();
-            user.ShowDialog();
-            form.Close();
-        }
-
         public static void OpenCreateFirstAdminForm(Form form)
         {
             var admin = new CreateFirstAdmin();
@@ -28,17 +20,17 @@ namespace DormitoryDistribution
             form.Close();
         }
 
-        public static void OpenAdminForm(Form form)
+        public static void OpenAdminForm(Form form, bool isAdmin)
         {
-            var admin = new Admin();
+            var admin = new Admin(isAdmin);
             form.Hide();
             admin.ShowDialog();
             form.Close();
         }
 
-        public static void OpenHostelAllocationForm(Form form)
+        public static void OpenHostelAllocationForm(Form form, bool isAdmin)
         {
-            var hostelAllocationForm = new HostelAllocationForm();
+            var hostelAllocationForm = new HostelAllocationForm(isAdmin);
             form.Hide();
             hostelAllocationForm.ShowDialog();
             form.Close();
