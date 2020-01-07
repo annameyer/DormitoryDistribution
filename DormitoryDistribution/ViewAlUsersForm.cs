@@ -50,8 +50,6 @@ namespace DormitoryDistribution
             if (isOldUser)
             {
                 UpdateUsers();
-                LoadGridData();
-                ClearData();
             }
             else if (modelIsValid)
             {
@@ -73,8 +71,17 @@ namespace DormitoryDistribution
                 IsAdmin = IsAdminCheckBox.Checked
             };
 
-            UserRepository.UpdateUsers(user);
-            MessageBox.Show("Data updated successfully!");
+            if (UserRepository.FindUser(user.Login, user.Password) == null)
+            {
+                UserRepository.UpdateUsers(user);
+                MessageBox.Show("Data updated successfully!");
+                LoadGridData();
+                ClearData();
+            }
+            else
+            {
+                MessageBox.Show("User exist!");
+            }           
         }
 
         private void CreateUsers()

@@ -318,5 +318,17 @@ namespace DormitoryDistribution
             minSalaryTextBox.Text = string.Empty;
             LoadGridData();
         }
+
+        private void helpToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (IsAdmin)
+            {
+                System.Diagnostics.Process.Start("HelpAdmin.docx");
+            }
+            else
+            {
+                System.Diagnostics.Process.Start("Help.docx");
+            }
+        }
     }
 }

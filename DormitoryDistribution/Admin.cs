@@ -21,11 +21,6 @@ namespace DormitoryDistribution
             OpenForms.OpenHostelAllocationForm(this, IsAdmin);
         }
 
-        private void helpToolStripMenuItem_Click(object sender, System.EventArgs e)
-        {
-
-        }
-
         private void backToolStripMenuItem_Click(object sender, System.EventArgs e)
         {
             OpenForms.OpenAuthorizationForm(this);

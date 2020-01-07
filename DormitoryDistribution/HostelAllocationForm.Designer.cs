@@ -64,6 +64,7 @@
             this.saveFileDialog = new System.Windows.Forms.SaveFileDialog();
             this.minSalaryTextBox = new System.Windows.Forms.TextBox();
             this.ClearSalaryButton = new System.Windows.Forms.Button();
+            this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.AccommodationAtTheHostel.SuspendLayout();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.HostelDataGridView)).BeginInit();
@@ -74,7 +75,8 @@
             // 
             this.AccommodationAtTheHostel.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.backToolStripMenuItem,
-            this.saveToolStripMenuItem});
+            this.saveToolStripMenuItem,
+            this.helpToolStripMenuItem});
             this.AccommodationAtTheHostel.Location = new System.Drawing.Point(0, 0);
             this.AccommodationAtTheHostel.Name = "AccommodationAtTheHostel";
             this.AccommodationAtTheHostel.Size = new System.Drawing.Size(1228, 24);
@@ -432,6 +434,13 @@
             this.ClearSalaryButton.UseVisualStyleBackColor = true;
             this.ClearSalaryButton.Click += new System.EventHandler(this.ClearSalaryButton_Click);
             // 
+            // helpToolStripMenuItem
+            // 
+            this.helpToolStripMenuItem.Name = "helpToolStripMenuItem";
+            this.helpToolStripMenuItem.Size = new System.Drawing.Size(44, 20);
+            this.helpToolStripMenuItem.Text = "Help";
+            this.helpToolStripMenuItem.Click += new System.EventHandler(this.helpToolStripMenuItem_Click);
+            // 
             // HostelAllocationForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -499,5 +508,6 @@
         private System.Windows.Forms.SaveFileDialog saveFileDialog;
         private System.Windows.Forms.TextBox minSalaryTextBox;
         private System.Windows.Forms.Button ClearSalaryButton;
+        private System.Windows.Forms.ToolStripMenuItem helpToolStripMenuItem;
     }
 }

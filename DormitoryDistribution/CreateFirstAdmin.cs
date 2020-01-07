@@ -13,19 +13,23 @@ namespace DormitoryDistribution
 
         private void CreateAdminButton_Click(object sender, EventArgs e)
         {
-            using (DormitoryDistributionContext _context = new DormitoryDistributionContext())
+            ErrorLabel.Text = "";
+            string login = LoginTextBox.Text.Trim();
+            string password = PasswordTextBox.Text.Trim();
+            Users admin = new Users
             {
-                var login = LoginTextBox.Text.Trim();
-                var password = PasswordTextBox.Text.Trim();
-                var admin = new Users
-                {
-                    Login = login,
-                    Password = password,
-                    IsAdmin = true
-                };
-                _context.Users.Add(admin);
-                _context.SaveChanges();
-                OpenForms.OpenAuthorizationForm(this);
+                Login = login,
+                Password = password,
+                IsAdmin = true
+            };
+            if (!string.IsNullOrEmpty(login) && !string.IsNullOrEmpty(password))
+            {
+                UserRepository.CreateUsers(admin);
+                OpenForms.OpenAdminForm(this, true);
+            }
+            else
+            {
+                    ErrorLabel.Text = "Enter login or password";
             }
         }
     }

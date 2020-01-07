@@ -33,6 +33,7 @@
             this.LoginLabel = new System.Windows.Forms.Label();
             this.PasswordTextBox = new System.Windows.Forms.TextBox();
             this.LoginTextBox = new System.Windows.Forms.TextBox();
+            this.ErrorLabel = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // CreateAdminButton
@@ -82,11 +83,21 @@
             this.LoginTextBox.Size = new System.Drawing.Size(170, 20);
             this.LoginTextBox.TabIndex = 6;
             // 
+            // ErrorLabel
+            // 
+            this.ErrorLabel.AutoSize = true;
+            this.ErrorLabel.ForeColor = System.Drawing.Color.Red;
+            this.ErrorLabel.Location = new System.Drawing.Point(153, 27);
+            this.ErrorLabel.Name = "ErrorLabel";
+            this.ErrorLabel.Size = new System.Drawing.Size(0, 13);
+            this.ErrorLabel.TabIndex = 10;
+            // 
             // CreateFirstAdmin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(473, 174);
+            this.Controls.Add(this.ErrorLabel);
             this.Controls.Add(this.PasswordLabel);
             this.Controls.Add(this.LoginLabel);
             this.Controls.Add(this.PasswordTextBox);
@@ -107,5 +118,6 @@
         private System.Windows.Forms.Label LoginLabel;
         private System.Windows.Forms.TextBox PasswordTextBox;
         private System.Windows.Forms.TextBox LoginTextBox;
+        private System.Windows.Forms.Label ErrorLabel;
     }
 }
