@@ -57,7 +57,7 @@ namespace DormitoryDistribution
             }
             else
             {
-                MessageBox.Show("Please, enter all field");
+                MessageBox.Show("Пожалуйста, заполните все поля");
             }            
         }
 
@@ -74,13 +74,13 @@ namespace DormitoryDistribution
             if (UserRepository.FindUser(user.Login, user.Password) == null)
             {
                 UserRepository.UpdateUsers(user);
-                MessageBox.Show("Data updated successfully!");
+                MessageBox.Show("Данные обновлены упешно!");
                 LoadGridData();
                 ClearData();
             }
             else
             {
-                MessageBox.Show("User exist!");
+                MessageBox.Show("Пользователь существует!");
             }           
         }
 
@@ -96,13 +96,13 @@ namespace DormitoryDistribution
             if (UserRepository.FindUser(user.Login, user.Password) == null)
             {
                 UserRepository.CreateUsers(user);
-                MessageBox.Show("Data saved successfully!");
+                MessageBox.Show("Данные сохранены успешно!");
                 LoadGridData();
                 ClearData();
             }
             else
             {
-                MessageBox.Show("User exist!");
+                MessageBox.Show("Пользователь существует!");
             }
         }
 
@@ -139,20 +139,20 @@ namespace DormitoryDistribution
         {
             try
             {
-                var confirmResult = MessageBox.Show("Are you sure you want to delete this item ??",
-                                     "Confirm Delete!",
+                var confirmResult = MessageBox.Show("Вы действительно хотите удалить?",
+                                     "Подтверждение удаления",
                                      MessageBoxButtons.YesNo);
                 if (confirmResult == DialogResult.Yes)
                 {
                     UserRepository.DeleteUsers(GetSelectedUser());
                     LoadGridData();
                     ClearData();
-                    MessageBox.Show("Data deleted successfully!");
+                    MessageBox.Show("Данные удалены успешно!");
                 }               
             }
             catch
             {
-                MessageBox.Show("Please, select cell for deleting");
+                MessageBox.Show("Пожалуйста, выберете строку для удаления");
             }
 
         }

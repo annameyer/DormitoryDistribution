@@ -37,11 +37,11 @@
             // LoginButton
             // 
             this.LoginButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LoginButton.Location = new System.Drawing.Point(155, 71);
+            this.LoginButton.Location = new System.Drawing.Point(125, 69);
             this.LoginButton.Name = "LoginButton";
-            this.LoginButton.Size = new System.Drawing.Size(99, 35);
+            this.LoginButton.Size = new System.Drawing.Size(160, 35);
             this.LoginButton.TabIndex = 0;
-            this.LoginButton.Text = "Login";
+            this.LoginButton.Text = "Авторизация";
             this.LoginButton.UseVisualStyleBackColor = true;
             this.LoginButton.Click += new System.EventHandler(this.LoginButton_Click);
             // 
@@ -83,7 +83,7 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.LoginButton);
             this.Name = "Welcome";
-            this.Text = "Welcome";
+            this.Text = "Добро пожаловать";
             this.ResumeLayout(false);
             this.PerformLayout();
 

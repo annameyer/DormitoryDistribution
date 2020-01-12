@@ -59,8 +59,8 @@
             // backToolStripMenuItem
             // 
             this.backToolStripMenuItem.Name = "backToolStripMenuItem";
-            this.backToolStripMenuItem.Size = new System.Drawing.Size(44, 20);
-            this.backToolStripMenuItem.Text = "Back";
+            this.backToolStripMenuItem.Size = new System.Drawing.Size(51, 20);
+            this.backToolStripMenuItem.Text = "Назад";
             this.backToolStripMenuItem.Click += new System.EventHandler(this.backToolStripMenuItem_Click);
             // 
             // UsersDataGridView
@@ -87,7 +87,7 @@
             this.groupBox1.Size = new System.Drawing.Size(312, 130);
             this.groupBox1.TabIndex = 7;
             this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "User ";
+            this.groupBox1.Text = "Данные";
             // 
             // HiddenIdTextBox
             // 
@@ -102,27 +102,27 @@
             this.label2.AutoSize = true;
             this.label2.Location = new System.Drawing.Point(52, 66);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(68, 16);
+            this.label2.Size = new System.Drawing.Size(57, 16);
             this.label2.TabIndex = 11;
-            this.label2.Text = "Password";
+            this.label2.Text = "Пароль";
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Location = new System.Drawing.Point(73, 30);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(41, 16);
+            this.label1.Size = new System.Drawing.Size(47, 16);
             this.label1.TabIndex = 10;
-            this.label1.Text = "Login";
+            this.label1.Text = "Логин";
             // 
             // IsAdminCheckBox
             // 
             this.IsAdminCheckBox.AutoSize = true;
             this.IsAdminCheckBox.Location = new System.Drawing.Point(120, 91);
             this.IsAdminCheckBox.Name = "IsAdminCheckBox";
-            this.IsAdminCheckBox.Size = new System.Drawing.Size(77, 20);
+            this.IsAdminCheckBox.Size = new System.Drawing.Size(69, 20);
             this.IsAdminCheckBox.TabIndex = 9;
-            this.IsAdminCheckBox.Text = "Is admin";
+            this.IsAdminCheckBox.Text = "Админ";
             this.IsAdminCheckBox.UseVisualStyleBackColor = true;
             // 
             // PasswordTextBox
@@ -143,31 +143,31 @@
             // 
             // CreateNewButton
             // 
-            this.CreateNewButton.Location = new System.Drawing.Point(474, 244);
+            this.CreateNewButton.Location = new System.Drawing.Point(508, 244);
             this.CreateNewButton.Name = "CreateNewButton";
-            this.CreateNewButton.Size = new System.Drawing.Size(75, 23);
+            this.CreateNewButton.Size = new System.Drawing.Size(75, 38);
             this.CreateNewButton.TabIndex = 8;
-            this.CreateNewButton.Text = "Create new";
+            this.CreateNewButton.Text = "Создать нового";
             this.CreateNewButton.UseVisualStyleBackColor = true;
             this.CreateNewButton.Click += new System.EventHandler(this.CreateNewButton_Click);
             // 
             // SaveButton
             // 
-            this.SaveButton.Location = new System.Drawing.Point(555, 244);
+            this.SaveButton.Location = new System.Drawing.Point(589, 244);
             this.SaveButton.Name = "SaveButton";
-            this.SaveButton.Size = new System.Drawing.Size(75, 23);
+            this.SaveButton.Size = new System.Drawing.Size(75, 38);
             this.SaveButton.TabIndex = 10;
-            this.SaveButton.Text = "Save";
+            this.SaveButton.Text = "Сохранить";
             this.SaveButton.UseVisualStyleBackColor = true;
             this.SaveButton.Click += new System.EventHandler(this.SaveButton_Click);
             // 
             // DeleteButton
             // 
-            this.DeleteButton.Location = new System.Drawing.Point(644, 244);
+            this.DeleteButton.Location = new System.Drawing.Point(670, 244);
             this.DeleteButton.Name = "DeleteButton";
-            this.DeleteButton.Size = new System.Drawing.Size(75, 23);
+            this.DeleteButton.Size = new System.Drawing.Size(75, 38);
             this.DeleteButton.TabIndex = 11;
-            this.DeleteButton.Text = "Delete";
+            this.DeleteButton.Text = "Удалить";
             this.DeleteButton.UseVisualStyleBackColor = true;
             this.DeleteButton.Click += new System.EventHandler(this.DeleteButton_Click);
             // 
@@ -185,7 +185,7 @@
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "ViewAlUsersForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Accommodation at the hostel";
+            this.Text = "Пользователи";
             this.Load += new System.EventHandler(this.ViewAlUsersForm_Load);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();

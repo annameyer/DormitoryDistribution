@@ -34,7 +34,7 @@ namespace DormitoryDistribution
                 }
                 else
                 {
-                    ErrorLabel.Text = "Password or login not correct";
+                    ErrorLabel.Text = "Пароль или логин не корректны";
                 }
             }
             else
@@ -45,7 +45,7 @@ namespace DormitoryDistribution
                 }
                 else
                 {
-                    ErrorLabel.Text = "Enter login or password";
+                    ErrorLabel.Text = "Введите логин или пароль";
                 }
             }
         }             

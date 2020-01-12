@@ -78,7 +78,7 @@ namespace DormitoryDistribution
             };
 
             HostelRepository.UpdateHostels(hostel);
-            MessageBox.Show("Data updated successfully!");
+            MessageBox.Show("Данные обновлены успешно!");
         }
 
         private void CreateUsers()
@@ -97,13 +97,13 @@ namespace DormitoryDistribution
                 };
 
                 HostelRepository.CreateHostels(hostel);
-                MessageBox.Show("Data saved successfully!");
+                MessageBox.Show("Данные сохранены успешно!");
                 LoadGridData();
                 ClearData();
             }
             catch
             {
-                MessageBox.Show("Please, enter all field");
+                MessageBox.Show("Пожалуйста, заполните все поля");
             }
         }
 
@@ -121,21 +121,21 @@ namespace DormitoryDistribution
         {
             try
             {
-                var confirmResult = MessageBox.Show("Are you sure you want to delete this item ??",
-                                     "Confirm Delete!",
+                var confirmResult = MessageBox.Show("Вы действительно хотите удалить?",
+                                     "Подтверждение удаления",
                                      MessageBoxButtons.YesNo);
                 if (confirmResult == DialogResult.Yes)
                 {
                     HostelRepository.DeleteHostels(GetSelectedRecord());
                     LoadGridData();
                     ClearData();
-                    MessageBox.Show("Data deleted successfully!");
+                    MessageBox.Show("Данные удалены успешно!");
                 }
                
             }
             catch
             {
-                MessageBox.Show("Please, select cell for deleting");
+                MessageBox.Show("Пожалуйста, выберете строку для удаления!");
             }
         }
 
@@ -291,7 +291,7 @@ namespace DormitoryDistribution
 
             DataSet ds = GenerateExcel.GenerateExcelFile(HostelRepository.GetHostels());
             ExcelLibrary.DataSetHelper.CreateWorkbook(path, ds);
-            MessageBox.Show("File created successfully");
+            MessageBox.Show("Файл сохранен успешно");
         }
 
         private void minSalaryTextBox_TextChanged(object sender, EventArgs e)

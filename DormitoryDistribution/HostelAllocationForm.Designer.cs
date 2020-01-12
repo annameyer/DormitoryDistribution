@@ -31,6 +31,7 @@
             this.AccommodationAtTheHostel = new System.Windows.Forms.MenuStrip();
             this.backToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.saveToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.DeleteButton = new System.Windows.Forms.Button();
             this.SaveButton = new System.Windows.Forms.Button();
             this.CreateNewButton = new System.Windows.Forms.Button();
@@ -64,7 +65,7 @@
             this.saveFileDialog = new System.Windows.Forms.SaveFileDialog();
             this.minSalaryTextBox = new System.Windows.Forms.TextBox();
             this.ClearSalaryButton = new System.Windows.Forms.Button();
-            this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.label7 = new System.Windows.Forms.Label();
             this.AccommodationAtTheHostel.SuspendLayout();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.HostelDataGridView)).BeginInit();
@@ -86,44 +87,51 @@
             // backToolStripMenuItem
             // 
             this.backToolStripMenuItem.Name = "backToolStripMenuItem";
-            this.backToolStripMenuItem.Size = new System.Drawing.Size(44, 20);
-            this.backToolStripMenuItem.Text = "Back";
+            this.backToolStripMenuItem.Size = new System.Drawing.Size(51, 20);
+            this.backToolStripMenuItem.Text = "Назад";
             this.backToolStripMenuItem.Click += new System.EventHandler(this.backToolStripMenuItem_Click);
             // 
             // saveToolStripMenuItem
             // 
             this.saveToolStripMenuItem.Name = "saveToolStripMenuItem";
-            this.saveToolStripMenuItem.Size = new System.Drawing.Size(95, 20);
-            this.saveToolStripMenuItem.Text = "Export to excel";
+            this.saveToolStripMenuItem.Size = new System.Drawing.Size(102, 20);
+            this.saveToolStripMenuItem.Text = "Экспорт в excel";
             this.saveToolStripMenuItem.Click += new System.EventHandler(this.saveToolStripMenuItem_Click);
+            // 
+            // helpToolStripMenuItem
+            // 
+            this.helpToolStripMenuItem.Name = "helpToolStripMenuItem";
+            this.helpToolStripMenuItem.Size = new System.Drawing.Size(166, 20);
+            this.helpToolStripMenuItem.Text = "Руководство пользователя";
+            this.helpToolStripMenuItem.Click += new System.EventHandler(this.helpToolStripMenuItem_Click);
             // 
             // DeleteButton
             // 
-            this.DeleteButton.Location = new System.Drawing.Point(210, 238);
+            this.DeleteButton.Location = new System.Drawing.Point(217, 226);
             this.DeleteButton.Name = "DeleteButton";
-            this.DeleteButton.Size = new System.Drawing.Size(75, 23);
+            this.DeleteButton.Size = new System.Drawing.Size(85, 46);
             this.DeleteButton.TabIndex = 16;
-            this.DeleteButton.Text = "Delete";
+            this.DeleteButton.Text = "Удалить";
             this.DeleteButton.UseVisualStyleBackColor = true;
             this.DeleteButton.Click += new System.EventHandler(this.DeleteButton_Click);
             // 
             // SaveButton
             // 
-            this.SaveButton.Location = new System.Drawing.Point(129, 238);
+            this.SaveButton.Location = new System.Drawing.Point(129, 226);
             this.SaveButton.Name = "SaveButton";
-            this.SaveButton.Size = new System.Drawing.Size(75, 23);
+            this.SaveButton.Size = new System.Drawing.Size(85, 46);
             this.SaveButton.TabIndex = 15;
-            this.SaveButton.Text = "Save";
+            this.SaveButton.Text = "Сохранить";
             this.SaveButton.UseVisualStyleBackColor = true;
             this.SaveButton.Click += new System.EventHandler(this.SaveButton_Click);
             // 
             // CreateNewButton
             // 
-            this.CreateNewButton.Location = new System.Drawing.Point(48, 238);
+            this.CreateNewButton.Location = new System.Drawing.Point(31, 226);
             this.CreateNewButton.Name = "CreateNewButton";
-            this.CreateNewButton.Size = new System.Drawing.Size(75, 23);
+            this.CreateNewButton.Size = new System.Drawing.Size(92, 46);
             this.CreateNewButton.TabIndex = 14;
-            this.CreateNewButton.Text = "Create new";
+            this.CreateNewButton.Text = "Создать \r\nнового";
             this.CreateNewButton.UseVisualStyleBackColor = true;
             this.CreateNewButton.Click += new System.EventHandler(this.CreateNewButton_Click);
             // 
@@ -152,16 +160,16 @@
             this.groupBox1.Size = new System.Drawing.Size(336, 285);
             this.groupBox1.TabIndex = 13;
             this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "User ";
+            this.groupBox1.Text = "Данные";
             // 
             // label6
             // 
             this.label6.AutoSize = true;
             this.label6.Location = new System.Drawing.Point(41, 173);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(52, 16);
+            this.label6.Size = new System.Drawing.Size(47, 16);
             this.label6.TabIndex = 20;
-            this.label6.Text = "Income";
+            this.label6.Text = "Доход";
             // 
             // IncomeTextBox
             // 
@@ -177,9 +185,9 @@
             this.label5.AutoSize = true;
             this.label5.Location = new System.Drawing.Point(38, 139);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(63, 32);
+            this.label5.Size = new System.Drawing.Size(68, 32);
             this.label5.TabIndex = 18;
-            this.label5.Text = "Average \r\nmark";
+            this.label5.Text = "Средний \r\nбалл";
             // 
             // AverageMarkTextBox
             // 
@@ -195,9 +203,9 @@
             this.label4.AutoSize = true;
             this.label4.Location = new System.Drawing.Point(38, 114);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(45, 16);
+            this.label4.Size = new System.Drawing.Size(55, 16);
             this.label4.TabIndex = 16;
-            this.label4.Text = "Group";
+            this.label4.Text = "Группа";
             // 
             // GroupTextBox
             // 
@@ -212,9 +220,9 @@
             this.label3.AutoSize = true;
             this.label3.Location = new System.Drawing.Point(38, 86);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(75, 16);
+            this.label3.Size = new System.Drawing.Size(67, 16);
             this.label3.TabIndex = 14;
-            this.label3.Text = "Patronymic";
+            this.label3.Text = "Фамилия";
             // 
             // PatronymicTextBox
             // 
@@ -237,18 +245,18 @@
             this.label2.AutoSize = true;
             this.label2.Location = new System.Drawing.Point(38, 58);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(76, 16);
+            this.label2.Size = new System.Drawing.Size(67, 16);
             this.label2.TabIndex = 11;
-            this.label2.Text = "Last Name ";
+            this.label2.Text = "Фамилия";
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Location = new System.Drawing.Point(38, 33);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(73, 16);
+            this.label1.Size = new System.Drawing.Size(34, 16);
             this.label1.TabIndex = 10;
-            this.label1.Text = "First Name";
+            this.label1.Text = "Имя";
             // 
             // ActivitiesCheckBox
             // 
@@ -312,7 +320,7 @@
             this.groupBox2.Size = new System.Drawing.Size(336, 180);
             this.groupBox2.TabIndex = 19;
             this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "Search and sort";
+            this.groupBox2.Text = "Поиск или сортировка";
             // 
             // SearchButton
             // 
@@ -320,7 +328,7 @@
             this.SearchButton.Name = "SearchButton";
             this.SearchButton.Size = new System.Drawing.Size(86, 23);
             this.SearchButton.TabIndex = 26;
-            this.SearchButton.Text = "Search";
+            this.SearchButton.Text = "Поиск";
             this.SearchButton.UseVisualStyleBackColor = true;
             this.SearchButton.Click += new System.EventHandler(this.SearchButton_Click);
             // 
@@ -330,7 +338,7 @@
             this.ClearButton.Name = "ClearButton";
             this.ClearButton.Size = new System.Drawing.Size(86, 23);
             this.ClearButton.TabIndex = 25;
-            this.ClearButton.Text = "Clear";
+            this.ClearButton.Text = "Очистить";
             this.ClearButton.UseVisualStyleBackColor = true;
             this.ClearButton.Click += new System.EventHandler(this.ClearButton_Click);
             // 
@@ -340,7 +348,7 @@
             this.SortButton.Name = "SortButton";
             this.SortButton.Size = new System.Drawing.Size(86, 23);
             this.SortButton.TabIndex = 24;
-            this.SortButton.Text = "Sort";
+            this.SortButton.Text = "Сортировка";
             this.SortButton.UseVisualStyleBackColor = true;
             this.SortButton.Click += new System.EventHandler(this.SortButton_Click);
             // 
@@ -349,10 +357,10 @@
             this.IncomeRadioButton.AutoSize = true;
             this.IncomeRadioButton.Location = new System.Drawing.Point(227, 72);
             this.IncomeRadioButton.Name = "IncomeRadioButton";
-            this.IncomeRadioButton.Size = new System.Drawing.Size(70, 20);
+            this.IncomeRadioButton.Size = new System.Drawing.Size(65, 20);
             this.IncomeRadioButton.TabIndex = 23;
             this.IncomeRadioButton.TabStop = true;
-            this.IncomeRadioButton.Text = "Income";
+            this.IncomeRadioButton.Text = "Доход";
             this.IncomeRadioButton.UseVisualStyleBackColor = true;
             this.IncomeRadioButton.CheckedChanged += new System.EventHandler(this.IncomeRadioButton_CheckedChanged);
             // 
@@ -361,10 +369,10 @@
             this.AverageMarkRadioButton.AutoSize = true;
             this.AverageMarkRadioButton.Location = new System.Drawing.Point(120, 98);
             this.AverageMarkRadioButton.Name = "AverageMarkRadioButton";
-            this.AverageMarkRadioButton.Size = new System.Drawing.Size(111, 20);
+            this.AverageMarkRadioButton.Size = new System.Drawing.Size(118, 20);
             this.AverageMarkRadioButton.TabIndex = 22;
             this.AverageMarkRadioButton.TabStop = true;
-            this.AverageMarkRadioButton.Text = "Average mark";
+            this.AverageMarkRadioButton.Text = "Средний балл";
             this.AverageMarkRadioButton.UseVisualStyleBackColor = true;
             this.AverageMarkRadioButton.CheckedChanged += new System.EventHandler(this.AverageMarkRadioButton_CheckedChanged);
             // 
@@ -373,10 +381,10 @@
             this.GroupRadioButton.AutoSize = true;
             this.GroupRadioButton.Location = new System.Drawing.Point(120, 72);
             this.GroupRadioButton.Name = "GroupRadioButton";
-            this.GroupRadioButton.Size = new System.Drawing.Size(63, 20);
+            this.GroupRadioButton.Size = new System.Drawing.Size(73, 20);
             this.GroupRadioButton.TabIndex = 21;
             this.GroupRadioButton.TabStop = true;
-            this.GroupRadioButton.Text = "Group";
+            this.GroupRadioButton.Text = "Группа";
             this.GroupRadioButton.UseVisualStyleBackColor = true;
             this.GroupRadioButton.CheckedChanged += new System.EventHandler(this.GroupRadioButton_CheckedChanged);
             // 
@@ -385,10 +393,10 @@
             this.LastNameRadioButton.AutoSize = true;
             this.LastNameRadioButton.Location = new System.Drawing.Point(12, 98);
             this.LastNameRadioButton.Name = "LastNameRadioButton";
-            this.LastNameRadioButton.Size = new System.Drawing.Size(94, 20);
+            this.LastNameRadioButton.Size = new System.Drawing.Size(85, 20);
             this.LastNameRadioButton.TabIndex = 20;
             this.LastNameRadioButton.TabStop = true;
-            this.LastNameRadioButton.Text = "Last Name ";
+            this.LastNameRadioButton.Text = "Фамилия";
             this.LastNameRadioButton.UseVisualStyleBackColor = true;
             this.LastNameRadioButton.CheckedChanged += new System.EventHandler(this.LastNameRadioButton_CheckedChanged);
             // 
@@ -397,29 +405,29 @@
             this.FirstNameRadioButton.AutoSize = true;
             this.FirstNameRadioButton.Location = new System.Drawing.Point(12, 72);
             this.FirstNameRadioButton.Name = "FirstNameRadioButton";
-            this.FirstNameRadioButton.Size = new System.Drawing.Size(91, 20);
+            this.FirstNameRadioButton.Size = new System.Drawing.Size(52, 20);
             this.FirstNameRadioButton.TabIndex = 19;
             this.FirstNameRadioButton.TabStop = true;
-            this.FirstNameRadioButton.Text = "First Name";
+            this.FirstNameRadioButton.Text = "Имя";
             this.FirstNameRadioButton.UseVisualStyleBackColor = true;
             this.FirstNameRadioButton.CheckedChanged += new System.EventHandler(this.FirstNameRadioButton_CheckedChanged);
             // 
             // accommodationAtTheHostelToolStripMenuItemButton
             // 
             this.accommodationAtTheHostelToolStripMenuItemButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.accommodationAtTheHostelToolStripMenuItemButton.Location = new System.Drawing.Point(892, 257);
+            this.accommodationAtTheHostelToolStripMenuItemButton.Location = new System.Drawing.Point(973, 257);
             this.accommodationAtTheHostelToolStripMenuItemButton.Name = "accommodationAtTheHostelToolStripMenuItemButton";
-            this.accommodationAtTheHostelToolStripMenuItemButton.Size = new System.Drawing.Size(202, 27);
+            this.accommodationAtTheHostelToolStripMenuItemButton.Size = new System.Drawing.Size(121, 27);
             this.accommodationAtTheHostelToolStripMenuItemButton.TabIndex = 20;
-            this.accommodationAtTheHostelToolStripMenuItemButton.Text = "Accommodation at the hostel";
+            this.accommodationAtTheHostelToolStripMenuItemButton.Text = "Получить";
             this.accommodationAtTheHostelToolStripMenuItemButton.UseVisualStyleBackColor = true;
             this.accommodationAtTheHostelToolStripMenuItemButton.Click += new System.EventHandler(this.accommodationAtTheHostelToolStripMenuItemButton_Click);
             // 
             // minSalaryTextBox
             // 
-            this.minSalaryTextBox.Location = new System.Drawing.Point(888, 231);
+            this.minSalaryTextBox.Location = new System.Drawing.Point(973, 231);
             this.minSalaryTextBox.Name = "minSalaryTextBox";
-            this.minSalaryTextBox.Size = new System.Drawing.Size(307, 20);
+            this.minSalaryTextBox.Size = new System.Drawing.Size(222, 20);
             this.minSalaryTextBox.TabIndex = 21;
             this.minSalaryTextBox.TextChanged += new System.EventHandler(this.minSalaryTextBox_TextChanged);
             this.minSalaryTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.minSalaryTextBox_KeyPress);
@@ -430,22 +438,25 @@
             this.ClearSalaryButton.Name = "ClearSalaryButton";
             this.ClearSalaryButton.Size = new System.Drawing.Size(86, 27);
             this.ClearSalaryButton.TabIndex = 26;
-            this.ClearSalaryButton.Text = "Clear";
+            this.ClearSalaryButton.Text = "Очистить";
             this.ClearSalaryButton.UseVisualStyleBackColor = true;
             this.ClearSalaryButton.Click += new System.EventHandler(this.ClearSalaryButton_Click);
             // 
-            // helpToolStripMenuItem
+            // label7
             // 
-            this.helpToolStripMenuItem.Name = "helpToolStripMenuItem";
-            this.helpToolStripMenuItem.Size = new System.Drawing.Size(44, 20);
-            this.helpToolStripMenuItem.Text = "Help";
-            this.helpToolStripMenuItem.Click += new System.EventHandler(this.helpToolStripMenuItem_Click);
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(886, 228);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(81, 26);
+            this.label7.TabIndex = 27;
+            this.label7.Text = "Минимальная \r\nзарпата";
             // 
             // HostelAllocationForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1228, 587);
+            this.Controls.Add(this.label7);
             this.Controls.Add(this.ClearSalaryButton);
             this.Controls.Add(this.minSalaryTextBox);
             this.Controls.Add(this.accommodationAtTheHostelToolStripMenuItemButton);
@@ -456,7 +467,7 @@
             this.MainMenuStrip = this.AccommodationAtTheHostel;
             this.Name = "HostelAllocationForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Accommodation at the hostel";
+            this.Text = "Распределение в общежитие";
             this.Load += new System.EventHandler(this.HostelAllocationForm_Load);
             this.AccommodationAtTheHostel.ResumeLayout(false);
             this.AccommodationAtTheHostel.PerformLayout();
@@ -509,5 +520,6 @@
         private System.Windows.Forms.TextBox minSalaryTextBox;
         private System.Windows.Forms.Button ClearSalaryButton;
         private System.Windows.Forms.ToolStripMenuItem helpToolStripMenuItem;
+        private System.Windows.Forms.Label label7;
     }
 }

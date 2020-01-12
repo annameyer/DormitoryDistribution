@@ -29,7 +29,7 @@ namespace DormitoryDistribution
             }
             else
             {
-                    ErrorLabel.Text = "Enter login or password";
+                    ErrorLabel.Text = "Пожалуйста, заполните все поля";
             }
         }
     }

@@ -44,7 +44,7 @@
             this.Login.Name = "Login";
             this.Login.Size = new System.Drawing.Size(95, 28);
             this.Login.TabIndex = 0;
-            this.Login.Text = "Login";
+            this.Login.Text = "Войти";
             this.Login.UseVisualStyleBackColor = true;
             this.Login.Click += new System.EventHandler(this.Login_Click);
             // 
@@ -71,19 +71,19 @@
             this.LoginLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LoginLabel.Location = new System.Drawing.Point(102, 53);
             this.LoginLabel.Name = "LoginLabel";
-            this.LoginLabel.Size = new System.Drawing.Size(57, 24);
+            this.LoginLabel.Size = new System.Drawing.Size(64, 24);
             this.LoginLabel.TabIndex = 4;
-            this.LoginLabel.Text = "Login";
+            this.LoginLabel.Text = "Логин";
             // 
             // PasswordLabel
             // 
             this.PasswordLabel.AutoSize = true;
             this.PasswordLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.PasswordLabel.Location = new System.Drawing.Point(67, 89);
+            this.PasswordLabel.Location = new System.Drawing.Point(90, 89);
             this.PasswordLabel.Name = "PasswordLabel";
-            this.PasswordLabel.Size = new System.Drawing.Size(92, 24);
+            this.PasswordLabel.Size = new System.Drawing.Size(76, 24);
             this.PasswordLabel.TabIndex = 5;
-            this.PasswordLabel.Text = "Password";
+            this.PasswordLabel.Text = "Пароль";
             // 
             // ErrorLabel
             // 
@@ -101,9 +101,9 @@
             this.viewPasswordCheck.AutoSize = true;
             this.viewPasswordCheck.Location = new System.Drawing.Point(176, 127);
             this.viewPasswordCheck.Name = "viewPasswordCheck";
-            this.viewPasswordCheck.Size = new System.Drawing.Size(97, 17);
+            this.viewPasswordCheck.Size = new System.Drawing.Size(114, 17);
             this.viewPasswordCheck.TabIndex = 8;
-            this.viewPasswordCheck.Text = "View password";
+            this.viewPasswordCheck.Text = "Показать пароль";
             this.viewPasswordCheck.UseVisualStyleBackColor = true;
             this.viewPasswordCheck.CheckedChanged += new System.EventHandler(this.viewPasswordCheck_CheckedChanged);
             // 
@@ -121,7 +121,7 @@
             this.Controls.Add(this.Login);
             this.Name = "AuthorizationForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Accommodation at the hostel";
+            this.Text = "Авторизация";
             this.ResumeLayout(false);
             this.PerformLayout();
 

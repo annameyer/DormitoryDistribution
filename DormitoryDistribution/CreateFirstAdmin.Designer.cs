@@ -38,11 +38,11 @@
             // 
             // CreateAdminButton
             // 
-            this.CreateAdminButton.Location = new System.Drawing.Point(221, 124);
+            this.CreateAdminButton.Location = new System.Drawing.Point(214, 119);
             this.CreateAdminButton.Name = "CreateAdminButton";
             this.CreateAdminButton.Size = new System.Drawing.Size(75, 23);
             this.CreateAdminButton.TabIndex = 0;
-            this.CreateAdminButton.Text = "Create";
+            this.CreateAdminButton.Text = "Создать";
             this.CreateAdminButton.UseVisualStyleBackColor = true;
             this.CreateAdminButton.Click += new System.EventHandler(this.CreateAdminButton_Click);
             // 
@@ -50,11 +50,11 @@
             // 
             this.PasswordLabel.AutoSize = true;
             this.PasswordLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.PasswordLabel.Location = new System.Drawing.Point(61, 76);
+            this.PasswordLabel.Location = new System.Drawing.Point(84, 76);
             this.PasswordLabel.Name = "PasswordLabel";
-            this.PasswordLabel.Size = new System.Drawing.Size(92, 24);
+            this.PasswordLabel.Size = new System.Drawing.Size(76, 24);
             this.PasswordLabel.TabIndex = 9;
-            this.PasswordLabel.Text = "Password";
+            this.PasswordLabel.Text = "Пароль";
             // 
             // LoginLabel
             // 
@@ -62,9 +62,9 @@
             this.LoginLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LoginLabel.Location = new System.Drawing.Point(96, 40);
             this.LoginLabel.Name = "LoginLabel";
-            this.LoginLabel.Size = new System.Drawing.Size(57, 24);
+            this.LoginLabel.Size = new System.Drawing.Size(64, 24);
             this.LoginLabel.TabIndex = 8;
-            this.LoginLabel.Text = "Login";
+            this.LoginLabel.Text = "Логин";
             // 
             // PasswordTextBox
             // 
@@ -105,7 +105,7 @@
             this.Controls.Add(this.CreateAdminButton);
             this.Name = "CreateFirstAdmin";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Create first administrator";
+            this.Text = "Создание администратора";
             this.ResumeLayout(false);
             this.PerformLayout();
 
